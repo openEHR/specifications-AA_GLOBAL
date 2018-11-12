@@ -4,7 +4,7 @@
 :cc_licence_img: /releases/{global_ref_repo}/latest/resources/images/cc-by-nd-88x31.png
 :openehr_issues_url: https://openehr.atlassian.net/browse/SPECPR/
 :openehr_website_url: https://www.openehr.org/
-:openehr_logo: /releases/{global_ref_repo}/latest/resources/images/openehr_logo_large.svg
+:openehr_logo: /releases/{global_ref_repo}/latest/resources/images/openehr_logo_large.png
 
 :release: latest
 :term_release: latest
