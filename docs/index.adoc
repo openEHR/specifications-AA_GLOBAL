@@ -1,0 +1,30 @@
+//
+// ============================================ Asciidoc HEADER =============================================
+//
+:doctype: book
+:pagenums:
+// get rid of PDF 'Chapter' labs on level 1 headings
+:chapter-label:
+//
+// HTML-only attributes
+//
+:linkcss:
+:keywords: UML class
+:description: openEHR Global class index
+:sectanchors:
+
+include::{ref_dir}/docs/boilerplate/global_vars.adoc[]
+
+//
+// ============================================ Asciidoc PREAMBLE =============================================
+//
+
+image::{openehr_logo}["openEHR logo",align="center"]
+
+= Global Class Index
+
+include::../../../specifications-BASE/docs/UML/class_index.adoc[]
+include::../../../specifications-RM/docs/UML/class_index.adoc[]
+include::../../../specifications-AM/docs/UML/class_index.adoc[]
+include::../../../specifications-PROC/docs/UML/class_index.adoc[]
+include::../../../specifications-SM/docs/UML/class_index.adoc[]
