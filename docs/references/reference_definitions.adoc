@@ -12,7 +12,13 @@
 :openehr_18308: {openehr_org}/releases/trunk/architecture/iso18308_conformance.pdf
 
 :openehr_am_releases: {openehr_org}/releases/AM/{am_release}
-:openehr_am_uml_export: {openehr_am_releases}/docs/UML
+//
+// FIXME: the following is necessary to stop the 'link:' from winding up inside
+// an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
+//
+:openehr_am_releases_diags: /releases/AM/{am_release}
+:openehr_am_uml_export: {openehr_am_releases_diags}/docs/UML
+
 :openehr_am: {openehr_am_releases}/docs/index
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
@@ -29,23 +35,26 @@
 
 :openehr_base_releases_loc: /releases/BASE/{base_release}
 :openehr_base_releases: {openehr_org}{openehr_base_releases_loc}
-:openehr_odin: {openehr_base_releases}/odin.html
 :openehr_base_types: {openehr_base_releases}/base_types.html
 :openehr_foundation_types: {openehr_base_releases}/foundation_types.html
-:openehr_base_bmm: {openehr_base_releases}/bmm.html
-:openehr_base_bmm_persistence: {openehr_base_releases}/bmm_persistence.html
-:openehr_base_change_control: {openehr_base_releases}/change_control.html
-:openehr_expression: {openehr_base_releases}/expression.html
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 
+:openehr_lang_releases_loc: /releases/LANG/{lang_release}
+:openehr_lang_releases: {openehr_org}{openehr_lang_releases_loc}
+:openehr_odin: {openehr_base_releases}/odin.html
+:openehr_bmm: {openehr_lang_releases}/bmm.html
+:openehr_bmm_persistence: {openehr_lang_releases}/bmm_persistence.html
+:openehr_el: {openehr_lang_releases}/el.html
+
 :openehr_sm_releases: {openehr_org}/releases/SM/{sm_release}
 //
-// FIXME: the following is necesasry to stop the 'link:' from winding up inside
+// FIXME: the following is necessary to stop the 'link:' from winding up inside
 // an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
 //
 :openehr_sm_releases_diags: /releases/SM/{sm_release}
 :openehr_sm_uml_diagrams: {openehr_sm_releases_diags}/docs/UML/diagrams
+
 :openehr_sm_openehr_platform: {openehr_sm_releases}/openehr_platform.html
 
 :openehr_query_releases: {openehr_org}/releases/QUERY/{query_release}
@@ -55,8 +64,14 @@
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 
 :openehr_rm_releases: {openehr_org}/releases/RM/{rm_release}
+//
+// FIXME: the following is necessary to stop the 'link:' from winding up inside
+// an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
+//
+:openehr_rm_releases_diags: /releases/RM/{rm_release}
+:openehr_rm_uml_export: {openehr_rm_releases_diags}/docs/UML
+
 :openehr_rm: {openehr_rm_releases}/docs/index
-:openehr_rm_uml_export: {openehr_rm_releases}/docs/UML
 :openehr_rm_data_types: {openehr_rm_releases}/data_types.html
 :openehr_rm_data_structures: {openehr_rm_releases}/data_structures.html
 :openehr_rm_common: {openehr_rm_releases}/common.html
@@ -75,12 +90,21 @@
 :openehr_am_oap: {openehr_release_102_pdf}/am/openehr_archetype_profile.pdf 
 
 :openehr_cnf_releases: {openehr_org}/releases/CNF/{cnf_release}
+:openehr_cnf_component: {openehr_cnf_releases}/docs/index
 :openehr_cnf_openehr_platform: {openehr_cnf_releases}/openehr_platform_conformance.html
 
 :openehr_terminology_releases: {openehr_org}/releases/TERM/{term_release}
+:openehr_term_component: {openehr_terminology_releases}/docs/index
 :openehr_terminology: {openehr_terminology_releases}/SupportTerminology.html
 :openehr_terminology_url: {openehr_domain}/releases/TERM/latest/SupportTerminology.html
 :openehr_terminology_resources: {openehr_git}/terminology
+
+:openehr_its_releases: {openehr_org}/releases/ITS/{its_rest_release}
+:openehr_its_component: {openehr_its_releases}/docs/index
+:openehr_its_rest_releases: {openehr_org}/releases/ITS-REST/{its_rest_release}
+:openehr_its_xml_releases: {openehr_org}/releases/ITS-XML/{its_xml_release}
+:openehr_its_json_releases: {openehr_org}/releases/ITS-JSON/{its_json_release}
+:openehr_its_bmm_releases: {openehr_org}/releases/ITS-BMM/{its_bmm_release}
 
 :openehr_rest_apis: {openehr_git}/specifications-ITS/docs
 :openehr_ehr_rest_api: {openehr_rest_apis}/ehr.html
