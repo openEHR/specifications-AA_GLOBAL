@@ -7,7 +7,7 @@
 //
 [cols="1,1"]
 |===
-2+^|*Issuer*: link:/programs/specification/[openEHR Specification Program]
+2+^|*Issuer*: {openehr_website_url}/programs/specification/[openEHR Specification Program]
 
 |*Release*: {release}
 |*Status*: {spec_status}

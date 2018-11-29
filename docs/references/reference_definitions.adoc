@@ -1,24 +1,18 @@
 :openehr_org: link:
+:openehr_specs: https://specifications.openehr.org
 :openehr_domain: www.openehr.org
 :openehr_git: https://github.com/openEHR
 
 //
 // openEHR specification resources; note variable substitutions in some of these for release id
 //
-:openehr_release_102_loc: /releases/RM/Release-1.0.2
-:openehr_release_102: {openehr_org}{openehr_release_102_loc}
-:openehr_release_102_pdf: {openehr_org}/releases/1.0.2/architecture
+:openehr_release_102: {openehr_specs}/releases/RM/Release-1.0.2
+:openehr_release_102_pdf: {openehr_specs}/releases/1.0.2/architecture
 
-:openehr_18308: {openehr_org}/releases/trunk/architecture/iso18308_conformance.pdf
+:openehr_18308: {openehr_release_102_pdf}/requirements/iso18308_conformance.pdf
 
-:openehr_am_releases: {openehr_org}/releases/AM/{am_release}
-//
-// FIXME: the following is necessary to stop the 'link:' from winding up inside
-// an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
-//
-:openehr_am_releases_diags: /releases/AM/{am_release}
-:openehr_am_uml_export: {openehr_am_releases_diags}/docs/UML
-
+:openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
+:openehr_am_uml_export: {openehr_am_releases}/docs/UML
 :openehr_am: {openehr_am_releases}/docs/index
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
@@ -31,46 +25,35 @@
 :openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl1.4.pdf
 :openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom1.4.pdf
 
-:openehr_cds_gdl: {openehr_org}/releases/CDS/{cds_release}/GDL.html
+:openehr_cds_gdl: {openehr_specs}/releases/CDS/{cds_release}/GDL.html
 
 :openehr_base_releases_loc: /releases/BASE/{base_release}
-:openehr_base_releases: {openehr_org}{openehr_base_releases_loc}
+:openehr_base_releases: {openehr_specs}{openehr_base_releases_loc}
 :openehr_base_types: {openehr_base_releases}/base_types.html
 :openehr_foundation_types: {openehr_base_releases}/foundation_types.html
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 
 :openehr_lang_releases_loc: /releases/LANG/{lang_release}
-:openehr_lang_releases: {openehr_org}{openehr_lang_releases_loc}
+:openehr_lang_releases: {openehr_specs}{openehr_lang_releases_loc}
 :openehr_odin: {openehr_base_releases}/odin.html
 :openehr_bmm: {openehr_lang_releases}/bmm.html
 :openehr_bmm_persistence: {openehr_lang_releases}/bmm_persistence.html
 :openehr_el: {openehr_lang_releases}/el.html
 
-:openehr_sm_releases: {openehr_org}/releases/SM/{sm_release}
-//
-// FIXME: the following is necessary to stop the 'link:' from winding up inside
-// an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
-//
-:openehr_sm_releases_diags: /releases/SM/{sm_release}
-:openehr_sm_uml_diagrams: {openehr_sm_releases_diags}/docs/UML/diagrams
+:openehr_sm_releases: {openehr_specs}/releases/SM/{sm_release}
+:openehr_sm_uml_diagrams: {openehr_sm_releases}/docs/UML/diagrams
 
 :openehr_sm_openehr_platform: {openehr_sm_releases}/openehr_platform.html
 
-:openehr_query_releases: {openehr_org}/releases/QUERY/{query_release}
+:openehr_query_releases: {openehr_specs}/releases/QUERY/{query_release}
 :openehr_query_aql: {openehr_query_releases}/AQL.html
 
-:openehr_proc_releases: {openehr_org}/releases/PROC/{proc_release}
+:openehr_proc_releases: {openehr_specs}/releases/PROC/{proc_release}
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 
-:openehr_rm_releases: {openehr_org}/releases/RM/{rm_release}
-//
-// FIXME: the following is necessary to stop the 'link:' from winding up inside
-// an 'image::' line, which won't render in HTML. Probably an Asciidoctor bug.
-//
-:openehr_rm_releases_diags: /releases/RM/{rm_release}
-:openehr_rm_uml_export: {openehr_rm_releases_diags}/docs/UML
-
+:openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
+:openehr_rm_uml_export: {openehr_rm_releases}/docs/UML
 :openehr_rm: {openehr_rm_releases}/docs/index
 :openehr_rm_data_types: {openehr_rm_releases}/data_types.html
 :openehr_rm_data_structures: {openehr_rm_releases}/data_structures.html
@@ -80,7 +63,7 @@
 :openehr_rm_ehr_extract: {openehr_rm_releases}/ehr_extract.html
 :openehr_rm_integration: {openehr_rm_releases}/integration.html
 :openehr_rm_support: {openehr_rm_releases}/support.html
-:openehr_rm_103_support: {openehr_org}/releases/RM/Release-1.0.3/support.html
+:openehr_rm_103_support: {openehr_specs}/releases/RM/Release-1.0.3/support.html
 
 :openehr_rm_102_common: {openehr_release_102_pdf}/rm/common_im.pdf
 :openehr_rm_102_data_types: {openehr_release_102_pdf}/rm/data_types_im.pdf
@@ -89,22 +72,22 @@
 :openehr_am_arch_sys: {openehr_release_102_pdf}/am/archetype_system.pdf
 :openehr_am_oap: {openehr_release_102_pdf}/am/openehr_archetype_profile.pdf 
 
-:openehr_cnf_releases: {openehr_org}/releases/CNF/{cnf_release}
+:openehr_cnf_releases: {openehr_specs}/releases/CNF/{cnf_release}
 :openehr_cnf_component: {openehr_cnf_releases}/docs/index
 :openehr_cnf_openehr_platform: {openehr_cnf_releases}/openehr_platform_conformance.html
 
-:openehr_terminology_releases: {openehr_org}/releases/TERM/{term_release}
+:openehr_terminology_releases: {openehr_specs}/releases/TERM/{term_release}
 :openehr_term_component: {openehr_terminology_releases}/docs/index
 :openehr_terminology: {openehr_terminology_releases}/SupportTerminology.html
 :openehr_terminology_url: {openehr_domain}/releases/TERM/latest/SupportTerminology.html
 :openehr_terminology_resources: {openehr_git}/terminology
 
-:openehr_its_releases: {openehr_org}/releases/ITS/{its_rest_release}
+:openehr_its_releases: {openehr_specs}/releases/ITS/{its_rest_release}
 :openehr_its_component: {openehr_its_releases}/docs/index
-:openehr_its_rest_releases: {openehr_org}/releases/ITS-REST/{its_rest_release}
-:openehr_its_xml_releases: {openehr_org}/releases/ITS-XML/{its_xml_release}
-:openehr_its_json_releases: {openehr_org}/releases/ITS-JSON/{its_json_release}
-:openehr_its_bmm_releases: {openehr_org}/releases/ITS-BMM/{its_bmm_release}
+:openehr_its_rest_releases: {openehr_specs}/releases/ITS-REST/{its_rest_release}
+:openehr_its_xml_releases: {openehr_specs}/releases/ITS-XML/{its_xml_release}
+:openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
+:openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
 
 :openehr_rest_apis: {openehr_git}/specifications-ITS/docs
 :openehr_ehr_rest_api: {openehr_rest_apis}/ehr.html
@@ -116,7 +99,7 @@
 //
 // openEHR online resources
 //
-:openehr_specs_home: {openehr_org}/programs/specification/workingbaseline
+:openehr_specs_home: {openehr_specs}
 :openehr_specification_program: {openehr_org}/programs/specification
 :openehr_awb: {openehr_org}/downloads/ADLworkbench
 :openehr_awb_github: {openehr_git}/adl-tools
@@ -193,6 +176,7 @@
 :xpath: https://www.w3.org/TR/xpath-31/
 :xquery: https://www.w3.org/XML/Query/
 :w3c_owl: https://www.w3.org/TR/2003/CR-owl-ref-20030818/
+:w3c_uri_addressing: http://www.w3.org/Addressing 
 
 //
 // OMG
@@ -215,12 +199,23 @@
 :rfc5646: http://tools.ietf.org/html/rfc5646
 
 //
+// ISO
+//
+:iso_8601_official: https://www.iso.org/iso-8601-date-and-time-format.html
+
+//
+// ECMA
+//
+:eiffel_ecma_367: http://www.ecma-international.org/publications/standards/Ecma-367.htm
+
+//
 // Wikipedia
 //
 :wikipedia: https://en.wikipedia.org/wiki/
 :wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
 :iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
 :iso_8601: {wikipedia}/ISO_8601
+:iso_rm_odp: {wikipedia}/RM-ODP
 :soap_protocol: {wikipedia}/SOAP
 :rest_ws: {wikipedia}/Representational_state_transfer
 
@@ -237,5 +232,4 @@
 :ampq: https://www.amqp.org/
 :google_protobuf: https://github.com/google/protobuf/wiki
 :zeroc_ice: https://zeroc.com/products/ice#what-is-ice
-:eiffel_ecma_367: http://www.ecma-international.org/publications/standards/Ecma-367.htm
 
