@@ -5,16 +5,19 @@
 #
 # ============== Definitions =============
 #
-USAGE="${0} [-hlrpt] [component names]: generate publishing outputs; HTML by default 
+spec_component_dir_leader="specifications-"
+
+USAGE="${0} [-fhrptv] [-l release] [component names]: generate publishing outputs; HTML by default 
   -f : force generation
   -h : output this help										
   -r : use remote CSS file location from website
   -p : generate PDF as well								
   -t : generate debug trace of asciidoctor-pdf back-end.
   -l release : use a specific release e.g. 'Release-1.0.3' - only use with a single component e.g. 'RM'
+  -v : turn on asciidoctor verbose mode
 
   Component names are the XX part of specifications directories with names of the form
-  specifications-XX; 
+  ${spec_component_dir_leader}XX; 
 
   Examples:
     ${0} AM                      # publish AM component using local CSS
@@ -24,7 +27,7 @@ USAGE="${0} [-hlrpt] [component names]: generate publishing outputs; HTML by def
 "
 
 NO_COMPONENTS_ERR="No components found. A 'component' is a name like 'AM', 'RM' etc, 
-   that forms the final part of a directory with a name of the form 'specifications-XX'
+   that forms the final part of a directory with a name of the form '${spec_component_dir_leader}XX'
 "
 
 COMPONENTS_RELEASE_ERR="When specifying a fixed release, only one component may be specified
@@ -47,12 +50,19 @@ run_asciidoctor () {
 		-a current_year=$year \
 		-a grammar_dir=$grammar_dir \
 		-a global_ref_repo=$global_ref_repo \
+		-a component=$component \
 		-a ref_dir=$ref_dir \
+		-a base_dir=$base_dir \
 		-a stylesdir=$stylesdir \
 		-a stylesheet=$stylesheet \
 		-a uml_export_dir=$uml_export_dir \
 		-a release=$release \
 		--out-file=$out_file"
+
+	# -v verbose
+	if [ "$verbose_mode" = true ]; then
+		opts="${opts} -v"
+	fi
 
 	asciidoctor ${opts} $2
 	echo generated $(pwd)/$out_file
@@ -72,7 +82,9 @@ run_asciidoctor_pdf () {
 		-a stylesdir=$stylesdir \
 		-a grammar_dir=$grammar_dir \
 		-a global_ref_repo=$global_ref_repo \
+		-a component=$component \
 		-a ref_dir=$ref_dir \
+		-a base_dir=$base_dir \
 		-a uml_export_dir=$uml_export_dir \
 		-a release=$release \
 		-a pdf-style=$pdf_theme \
@@ -80,6 +92,11 @@ run_asciidoctor_pdf () {
 		-a allow-uri-read \
 		-r asciidoctor-pdf -b pdf \
 		--out-file=$out_file"
+
+	# -v verbose
+	if [ "$verbose_mode" = true ]; then
+		opts="${opts} -v"
+	fi
 
 	# -a pdf-fontsdir=path/to/fonts 
 	if [ "$pdf_trace" = true ]; then
@@ -117,8 +134,8 @@ uml_source_dir=computable/UML
 # relative location of UML file export directory from a specifications-XX/docs/xxx directory
 uml_export_dir=../UML
 
-specs_root_uri=https://www.openehr.org/releases
-specs_root_ref_uri=$specs_root_uri/$global_ref_repo/latest
+specs_root_uri=https://specifications.openehr.org
+specs_css_uri=$specs_root_uri/styles
 
 # ------------- static vars --------------
 # specifications root dir: this directory must contain clones of all the specifications-XX repos
@@ -130,6 +147,10 @@ echo "setting spec_root to $spec_root"
 # resolved during processing of this script
 ref_dir=$spec_root/specifications-$global_ref_repo
 echo "setting ref_dir to $ref_dir"
+
+# set the following only for re-publishing old releases
+base_dir=$spec_root/specifications-BASE
+echo "setting base_dir to $base_dir"
 
 # generate a clean directory that can act as a URI for CSS; remove any
 # cygdrive prefix added if we are running under cygwin
@@ -151,7 +172,7 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "fhprtl:" o; do
+while getopts "fhprtvl:" o; do
     case "${o}" in
         f)
             force_generate=true
@@ -170,6 +191,9 @@ while getopts "fhprtl:" o; do
             ;;
         l)
             release=$OPTARG
+            ;;
+        v)
+            verbose_mode=true
             ;;
         *)
             usage
@@ -201,12 +225,12 @@ fi
 # see if there are individual args like 'AM', 'RM' etc
 if [ $# -ge 1 ]; then
 	while [ $# -ge 1 ]; do
-		component_args="${component_args} specifications-$1"
+		component_args="${component_args} ${spec_component_dir_leader}$1"
 		shift
 	done
 	component_list=($component_args)
 else
-	component_list=$(ls -1d specifications-*)
+	component_list=$(ls -1d ${spec_component_dir_leader}*)
 fi
 
 # determine component list
@@ -221,7 +245,7 @@ fi
 # set some config vars based on command line
 if [[ "$use_remote_resources" = true ]]; then
 	echo "using remote CSS location"
-	stylesdir=$specs_root_ref_uri/resources/css
+	stylesdir=$specs_css_uri
 else
 	stylesdir=${local_ref_uri}/resources/css
 fi
@@ -233,6 +257,7 @@ for spec_component_dir in ${component_list[@]}; do
 
 	echo "========= cd $spec_component_dir =========="
 	cd $spec_component_dir
+	component=${spec_component_dir#"$spec_component_dir_leader"}
 
 	# get a timestamp of UML dir
 	ts_uml="0.0"
