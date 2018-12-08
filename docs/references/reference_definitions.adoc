@@ -1,7 +1,4 @@
 :openehr_org: link:
-:openehr_specs: https://specifications.openehr.org
-:openehr_domain: www.openehr.org
-:openehr_git: https://github.com/openEHR
 
 //
 // openEHR specification resources; note variable substitutions in some of these for release id
@@ -15,6 +12,7 @@
 
 :openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
 :openehr_am_uml_diagrams: {openehr_am_releases}/docs/UML/diagrams
+:openehr_am14_uml_diagrams: {openehr_am_releases}/docs/UML/AOM1.4/diagrams
 :openehr_am: {openehr_am_releases}/docs/index
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
@@ -98,7 +96,6 @@
 //
 // openEHR online resources
 //
-:openehr_specs_home: {openehr_specs}
 :openehr_specification_program: {openehr_org}/programs/specification
 :openehr_awb: {openehr_org}/downloads/ADLworkbench
 :openehr_awb_github: {openehr_git}/adl-tools
@@ -121,7 +118,6 @@
 //
 // openEHR Jira URLs
 //
-:openehr_jira_home: {openehr_specs}/jira
 :openehr_jira: {openehr_jira_home}/browse
 :openehr_jira_issues: {openehr_jira_home}/issues
 :openehr_jira_prs: {openehr_jira_issues}/?filter=11102
@@ -263,4 +259,5 @@
 :ampq: https://www.amqp.org/
 :google_protobuf: https://github.com/google/protobuf/wiki
 :zeroc_ice: https://zeroc.com/products/ice#what-is-ice
+:typescript: https://www.typescriptlang.org
 

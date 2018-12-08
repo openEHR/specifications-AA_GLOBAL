@@ -1,11 +1,16 @@
 :affiliates: Australia, Brazil, Japan, China, New Zealand, Norway, Slovenia
 :cc_licence_text: Creative Commons Attribution-NoDerivs 3.0 Unported.
 :cc_licence_url: https://creativecommons.org/licenses/by-nd/3.0/
-:openehr_issues_url: https://openehr.atlassian.net/browse/SPECPR
+
+:openehr_domain: www.openehr.org
+:openehr_git: https://github.com/openEHR
+:openehr_specs: https://specifications.openehr.org
+:openehr_jira_home: {openehr_specs}/jira
+
+:openehr_issues_url: {openehr_specs}/browse/SPECPR
 :openehr_website_url: https://www.openehr.org
-:specifications_website_url: https://specifications.openehr.org
-:openehr_logo: {specifications_website_url}/images/openehr_logo_large.png
-:cc_licence_img: {specifications_website_url}/images/cc-by-nd-88x31.png
+:openehr_logo: {openehr_specs}/images/openehr_logo_large.png
+:cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 
 :release: latest
 :term_release: latest
