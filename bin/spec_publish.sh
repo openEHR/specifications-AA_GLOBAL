@@ -39,14 +39,15 @@ COMPONENTS_RELEASE_ERR="When specifying a fixed release, only one component may 
 
 # run Asciidoctor with HTML backend
 # args: $1 - outfile name minus extension
-#       $2 - asciidoctor master source file name
-# 		$3 - variable arguments, e.g. "-a rm_release=Release-1.0.3" (can be empty)
+#       $2 - outdir
+#       $3 - asciidoctor master source file name
+# 		$4 - variable arguments, e.g. "-a rm_release=Release-1.0.3" (can be empty)
 #
 run_asciidoctor () {
-	out_file=${1}.html
+	out_file=${2}${1}.html
 
 	# work out the options
-	opts="$3 \
+	opts="$4 \
 		-a current_year=$year \
 		-a grammar_dir=$grammar_dir \
 		-a global_ref_repo=$global_ref_repo \
@@ -55,8 +56,8 @@ run_asciidoctor () {
 		-a base_dir=$base_dir \
 		-a stylesdir=$stylesdir \
 		-a stylesheet=$stylesheet \
-		-a uml_export_dir=$uml_export_dir \
 		-a release=$release \
+		-a doc_name=${1} \
 		--out-file=$out_file"
 
 	# -v verbose
@@ -64,20 +65,21 @@ run_asciidoctor () {
 		opts="${opts} -v"
 	fi
 
-	asciidoctor ${opts} $2
+	asciidoctor ${opts} $3
 	echo generated $(pwd)/$out_file
 }
 
 # run Asciidoctor with PDF backend
 # args: $1 - outfile name minus extension
-#       $2 - asciidoctor master source file name
-# 		$3 - variable arguments, e.g. "-a rm_release=Release-1.0.3" (can be empty)
+#       $2 - outdir
+#       $3 - asciidoctor master source file name
+# 		$4 - variable arguments, e.g. "-a rm_release=Release-1.0.3" (can be empty)
 #
 run_asciidoctor_pdf () {
-	out_file=${1}.pdf
+	out_file=${2}${1}.html
 
 	# work out the options
-	opts="$3 \
+	opts="$4 \
 		-a current_year=$year \
 		-a stylesdir=$stylesdir \
 		-a grammar_dir=$grammar_dir \
@@ -85,8 +87,8 @@ run_asciidoctor_pdf () {
 		-a component=$component \
 		-a ref_dir=$ref_dir \
 		-a base_dir=$base_dir \
-		-a uml_export_dir=$uml_export_dir \
 		-a release=$release \
+		-a doc_name=${1} \
 		-a pdf-style=$pdf_theme \
 		-a pdf-stylesdir=$ref_dir/resources \
 		-a allow-uri-read \
@@ -103,7 +105,7 @@ run_asciidoctor_pdf () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} $2
+	asciidoctor ${opts} $3
 	echo generated $(pwd)/$out_file
 }
 
@@ -130,9 +132,6 @@ global_ref_repo=AA_GLOBAL
 
 # relative location of UML directory under any specifications-XX directory
 uml_source_dir=computable/UML
-
-# relative location of UML file export directory from a specifications-XX/docs/xxx directory
-uml_export_dir=../UML
 
 specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
@@ -282,9 +281,9 @@ for spec_component_dir in ${component_list[@]}; do
 				echo " REBUILD ---------------"
 				cd $docdir
 
-				run_asciidoctor ${docname} $master_doc_name "${ad_varargs}"
+				run_asciidoctor ${docname} '../' $master_doc_name "${ad_varargs}"
 				if [[ "$gen_pdf" = true ]]; then
-					run_asciidoctor_pdf ${docname} $master_doc_name "${ad_varargs}"
+					run_asciidoctor_pdf ${docname} '../' $master_doc_name "${ad_varargs}"
 				fi
 				cd $olddir
 			else
@@ -302,7 +301,7 @@ for spec_component_dir in ${component_list[@]}; do
 			echo "    ------------- cd $docdir ---------------"
 			cd $docdir
 
-			run_asciidoctor ${docname} $index_doc_name "${ad_varargs}"
+			run_asciidoctor ${docname} './' $index_doc_name "${ad_varargs}"
 			cd $olddir
 		done
 	fi
