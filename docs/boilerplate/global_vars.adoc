@@ -9,22 +9,37 @@
 :openehr_logo: {openehr_specs}/images/openehr_logo_large.png
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 
+// UML relative directory for .adoc includes
+:uml_export_dir: ../UML
+
+// UML directory for live links to graphic files
+//:uml_diagrams_uri: {openehr_specs}/releases/{component}/{release}/docs/UML/diagrams
+:uml_diagrams_uri: UML/diagrams
+
+// diagrams URI
+//:diagrams_uri: {openehr_specs}/releases/{component}/{release}/docs/{doc_name}/diagrams
+:diagrams_uri: {doc_name}/diagrams
+
 //
 // ========= Jira =========
 // links defined here are reprocessed in Nginx/Apache
 //
 :openehr_jira_home: {openehr_specs}/jira
-:openehr_issues_url: {openehr_jira_home}/browse/SPECPR
 :component_roadmap: {openehr_specs}/components/{component}/roadmap
 :component_history: {openehr_specs}/components/{component}/history
 :component_prs: {openehr_specs}/components/{component}/open_issues
+
+// URI for any issue, mapped to /jira/browse/<issue> in Apache rewrites
+// Second var is legacy name
+:spec_tickets: {openehr_specs}/tickets
+:openehr_jira: {openehr_specs}/tickets
 
 // special Jira URIs
 :openehr_terminology_request: {openehr_specs}/components/TERM/request
 
 // The following two are partial patterns for URIs of the form
-// /components/RM/$release/issues
-// /components/RM/$release/changes
+// /components/<component>/<release>/issues
+// /components/<component>/<release>/changes
 :component_prs_fixed: {openehr_specs}/components/{component}/
 :component_crs_done: {openehr_specs}/components/{component}/
 
