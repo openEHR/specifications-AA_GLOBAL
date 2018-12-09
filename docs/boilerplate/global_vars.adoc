@@ -3,14 +3,30 @@
 :cc_licence_url: https://creativecommons.org/licenses/by-nd/3.0/
 
 :openehr_domain: www.openehr.org
+:openehr_website_url: https://www.openehr.org
 :openehr_git: https://github.com/openEHR
 :openehr_specs: https://specifications.openehr.org
-:openehr_jira_home: {openehr_specs}/jira
-
-:openehr_issues_url: {openehr_specs}/browse/SPECPR
-:openehr_website_url: https://www.openehr.org
 :openehr_logo: {openehr_specs}/images/openehr_logo_large.png
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
+
+//
+// ========= Jira =========
+// links defined here are reprocessed in Nginx/Apache
+//
+:openehr_jira_home: {openehr_specs}/jira
+:openehr_issues_url: {openehr_jira_home}/browse/SPECPR
+:component_roadmap: {openehr_specs}/components/{component}/roadmap
+:component_history: {openehr_specs}/components/{component}/history
+:component_prs: {openehr_specs}/components/{component}/open_issues
+
+// special Jira URIs
+:openehr_terminology_request: {openehr_specs}/components/TERM/request
+
+// The following two are partial patterns for URIs of the form
+// /components/RM/$release/issues
+// /components/RM/$release/changes
+:component_prs_fixed: {openehr_specs}/components/{component}/
+:component_crs_done: {openehr_specs}/components/{component}/
 
 :release: latest
 :term_release: latest

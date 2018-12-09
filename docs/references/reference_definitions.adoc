@@ -116,47 +116,6 @@
 :eomf_bmm: https://github.com/wolandscat/EOMF/tree/master/library/bmm
 
 //
-// openEHR Jira URLs
-//
-:openehr_jira: {openehr_jira_home}/browse
-:openehr_jira_issues: {openehr_jira_home}/issues
-:openehr_jira_prs: {openehr_jira_issues}/?filter=11102
-:openehr_jira_prs_am: {openehr_jira_issues}/?filter=11101
-:openehr_jira_prs_am_14: {openehr_jira_issues}/?filter=11121
-:openehr_jira_prs_am_2: {openehr_jira_issues}/?filter=11122
-:openehr_jira_crs_am_14: {openehr_jira_issues}/?filter=11120
-:openehr_jira_crs_am_2: {openehr_jira_issues}/?filter=11123
-
-:openehr_jira_prs_rm: {openehr_jira_issues}/?filter=11103
-:openehr_jira_crs_rm: {openehr_jira_issues}/?filter=11132
-
-:openehr_jira_prs_sm: {openehr_jira_issues}/?filter=11104
-:openehr_jira_crs_sm: {openehr_jira_issues}/?filter=11131
-
-:openehr_jira_prs_base: {openehr_jira_issues}/?filter=11105
-:openehr_jira_crs_base: {openehr_jira_issues}/?filter=10723
-
-:openehr_jira_prs_cds: {openehr_jira_issues}/?filter=11107
-:openehr_jira_crs_cds: {openehr_jira_issues}/?filter=11126
-
-:openehr_jira_prs_cnf: {openehr_jira_issues}/?filter=11108
-:openehr_jira_crs_cnf: {openehr_jira_issues}/?filter=11127
-
-:openehr_jira_prs_lang: {openehr_jira_issues}/?filter=11116
-:openehr_jira_crs_lang: {openehr_jira_issues}/?filter=11128
-
-:openehr_jira_prs_proc: {openehr_jira_issues}/?filter=11106
-:openehr_jira_crs_proc: {openehr_jira_issues}/?filter=11129
-
-:openehr_jira_prs_query: {openehr_jira_issues}/?filter=11109
-:openehr_jira_crs_query: {openehr_jira_issues}/?filter=11130
-
-:openehr_jira_prs_term: {openehr_jira_issues}/?filter=11110
-:openehr_jira_crs_term: {openehr_jira_issues}/?filter=11133
-
-:openehr_jira_prs_new_term_request: {openehr_jira_issues}/?filter=11111
-
-//
 // openEHR Wiki URLs
 //
 :openehr_wiki_root: {openehr_specs}/wiki
