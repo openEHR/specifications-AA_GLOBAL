@@ -51,6 +51,7 @@
 
 :openehr_proc_releases: {openehr_specs}/releases/PROC/{proc_release}
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
+:openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
 
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
 :openehr_rm_uml_diagrams: {openehr_rm_releases}/docs/UML/diagrams
