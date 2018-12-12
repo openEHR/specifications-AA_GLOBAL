@@ -9,7 +9,7 @@
 |===
 2+^|*Issuer*: {openehr_website_url}/programs/specification/[openEHR Specification Program]
 
-|*Release*: {release}
+|*Release*: {component} {release}
 |*Status*: {spec_status}
 
 |*Revision*: <<latest_issue>>
