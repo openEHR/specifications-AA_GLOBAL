@@ -277,10 +277,11 @@ for spec_component_dir in ${component_list[@]}; do
 			# check if target .html file is most recent; if not regenerate
 			ts_src_docs=`find $docdir -printf "%T@\n" | sort | tail -1`
 			ts_out_doc=`find docs -name $docname.html -printf "%T@\n"`
-			if [ "$force_generate" = true -o \
-				$(echo "$ts_src_docs > $ts_out_doc" | bc -l) -eq 1 -o \
+			if [[ "$force_generate" = true || \
+				! -f $docdir.html || \
+				$(echo "$ts_src_docs > $ts_out_doc" | bc -l) -eq 1 || \
 				$(echo "$ts_uml > $ts_src_docs" | bc -l) -eq 1 \
-			]; then
+			]]; then
 				echo " REBUILD ---------------"
 				cd $docdir
 
