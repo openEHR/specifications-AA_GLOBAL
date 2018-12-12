@@ -13,12 +13,17 @@
 :uml_export_dir: ../UML
 
 // UML directory for live links to graphic files
-//:uml_diagrams_uri: {openehr_specs}/releases/{component}/{release}/docs/UML/diagrams
 :uml_diagrams_uri: UML/diagrams
 
-// diagrams URI
-//:diagrams_uri: {openehr_specs}/releases/{component}/{release}/docs/{doc_name}/diagrams
+// diagrams & images URIs
 :diagrams_uri: {doc_name}/diagrams
+:images_uri: {doc_name}/images
+
+//
+// openEHR Wiki URLs
+//
+:openehr_wiki_root: {openehr_specs}/wiki
+:openehr_wiki: {openehr_wiki_root}/spacedirectory/view.action
 
 //
 // ========= Jira =========
