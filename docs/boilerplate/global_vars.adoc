@@ -4,6 +4,7 @@
 
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
+:openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_git: https://github.com/openEHR
 :openehr_specs: https://specifications.openehr.org
 :openehr_logo: {openehr_specs}/images/openehr_logo_large.png
@@ -14,6 +15,7 @@
 
 // UML directory for live links to graphic files
 :uml_diagrams_uri: UML/diagrams
+:uml_aom14_diagrams_uri: UML/AOM1.4/diagrams
 
 // diagrams & images URIs
 :diagrams_uri: {doc_name}/diagrams

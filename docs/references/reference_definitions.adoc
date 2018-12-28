@@ -12,7 +12,8 @@
 
 :openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
 :openehr_am_uml_diagrams: {openehr_am_releases}/UML/diagrams
-:openehr_am14_uml_diagrams: {openehr_am_releases}/UML/AOM1.4/diagrams
+// this case is currently an exception and needs the 'docs' in the path.
+:openehr_am14_uml_diagrams: {openehr_am_releases}/docs/UML/AOM1.4/diagrams
 :openehr_am: {openehr_am_releases}/index
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
@@ -33,6 +34,7 @@
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 :openehr_base_uml_diagrams: {openehr_base_releases}/UML/diagrams
+:openehr_base_release_102: {openehr_specs}/releases/BASE/Release-1.0.2
 
 :openehr_lang_releases: {openehr_specs}/releases/LANG/{lang_release}
 :openehr_odin: {openehr_lang_releases}/odin.html
@@ -78,6 +80,7 @@
 :openehr_term_component: {openehr_terminology_releases}/index
 :openehr_terminology: {openehr_terminology_releases}/SupportTerminology.html
 :openehr_terminology_resources: {openehr_git}/terminology
+:openehr_terminology_xml: {openehr_terminology_resources}/blob/master/openEHR_RM/en/openehr_terminology.xml
 
 :openehr_its_releases: {openehr_specs}/releases/ITS/{its_rest_release}
 :openehr_its_component: {openehr_its_releases}/index
@@ -214,4 +217,4 @@
 :zeroc_ice: https://zeroc.com/products/ice#what-is-ice
 :typescript: https://www.typescriptlang.org
 :commonmark_spec: https://spec.commonmark.org/ 
-
+:perl_regex: https://perldoc.perl.org/perlre.html
