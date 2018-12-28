@@ -258,17 +258,33 @@ for spec_component_dir in ${component_list[@]}; do
 	cd $spec_component_dir
 	component=${spec_component_dir#"$spec_component_dir_leader"}
 
+	# re-run UML extractor to create UML doc files if applicable
 	# get a timestamp of UML dir
 	ts_uml="0.0"
+	ts_uml_docs="0.0"
 	if [ -d $uml_source_dir ]; then
 		ts_uml=`find $uml_source_dir -printf "%T@\n" | sort | tail -1`
+
+		# get a timestamp of the generated UML docs dir
+		if [ -d docs/UML/classes ]; then
+			ts_uml_docs=`find docs/UML/classes -printf "%T@\n" | sort | tail -1`
+		fi
+
+		# if UML source newer than UML docs, regenerate UML docs
+		uml_regen_cmd=do_uml_generate-spec-$component.sh
+		if [[ $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_regen_cmd ]]; then
+			echo "$uml_regen_cmd"
+			source $uml_regen_cmd
+
+			# regenerate timestamp of the generated UML docs dir
+			ts_uml_docs=`find docs/UML/classes -printf "%T@\n" | sort | tail -1`
+		fi
 	fi
 
 	# process docs dir
 	if [ -d docs ]; then
 		# do the main documents first
-		find docs -name $master_doc_name | while read docpath
-		do
+		find docs -name $master_doc_name | while read docpath ; do
 			docdir=$(dirname $docpath)
 			docname=$(basename $docdir)
 			olddir=$(pwd)
@@ -276,11 +292,11 @@ for spec_component_dir in ${component_list[@]}; do
 			echo -n "    ------------- checking $docdir "
 			# check if target .html file is most recent; if not regenerate
 			ts_src_docs=`find $docdir -printf "%T@\n" | sort | tail -1`
-			ts_out_doc=`find docs -name $docname.html -printf "%T@\n"`
+			ts_out_doc=`stat -c %Y $docdir.html`
 			if [[ "$force_generate" = true || \
-				! -f $docdir.html || \
+				! -f "$docdir.html" || \
 				$(echo "$ts_src_docs > $ts_out_doc" | bc -l) -eq 1 || \
-				$(echo "$ts_uml > $ts_src_docs" | bc -l) -eq 1 \
+				$(echo "$ts_uml_docs > $ts_out_doc" | bc -l) -eq 1 \
 			]]; then
 				echo " REBUILD ---------------"
 				cd $docdir
