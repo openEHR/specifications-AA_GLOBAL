@@ -1,0 +1,18 @@
+//
+// Short front page boilerplate, included in each individual specification not using the full form
+// The file global_vars.adoc must be included BEFORE this one in any master doc.
+//
+
+:doctype: book
+:source-highlighter: pygments
+//:pygments-style: murphy
+//:toc: macro
+:toc: left
+:toclevels: 4
+:pagenums:
+:sectnums!:
+:sectnumlevels: 4
+:chapter-refsig: Section
+:xrefstyle: short
+// get rid of PDF 'Chapter' labs on level 1 headings
+:chapter-label:

@@ -1,36 +1,8 @@
 //
 // Short front page boilerplate, included in each individual specification not using the full form
+// The file global_vars.adoc must be included BEFORE this one in any master doc.
 //
 
-//
-// document id block
-//
-[cols="1,1"]
-|===
-2+^|*Issuer*: {openehr_website_url}/programs/specification/[openEHR Specification Program]
+include::doc_id_block.adoc[]
+include::licence_block.adoc[]
 
-|*Release*: {component} {release}
-|*Status*: {spec_status}
-
-|*Revision*: <<latest_issue>>
-|*Date*: <<latest_issue_date>>
-
-2+^|*Keywords*: {keywords}
-|===
-
-//
-// licence block
-//
-[cols="^1,4", options="header"]
-|===
-2+^|(C) {copyright_year} - {current_year} The openEHR Foundation
-
-2+^|link:/[The openEHR Foundation^] is an independent, non-profit community organisation, facilitating the sharing of health records by consumers and clinicians via open-source, standards-based implementations.
-
-|*Licence*
-|image:{cc_licence_img}[image] {cc_licence_text} {cc_licence_url}
-
-|*Support*
-|Issues: {component_prs}[Problem Reports^] +
- Web: link:/[www.openehr.org^]
-|===

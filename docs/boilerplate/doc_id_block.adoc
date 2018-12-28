@@ -1,0 +1,15 @@
+//
+// document id block - include into full front page file
+//
+[cols="1,1"]
+|===
+2+^|*Issuer*: {openehr_specification_program}[openEHR Specification Program^]
+
+|*Release*: {component} {release}
+|*Status*: {spec_status}
+
+|*Revision*: <<latest_issue>>
+|*Date*: <<latest_issue_date>>
+
+2+^|*Keywords*: {keywords}
+|===
