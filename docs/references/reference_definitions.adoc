@@ -1,5 +1,3 @@
-:openehr_org: link:
-
 //
 // openEHR specification resources; note variable substitutions in some of these for release id
 //
@@ -12,8 +10,7 @@
 
 :openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
 :openehr_am_uml_diagrams: {openehr_am_releases}/UML/diagrams
-// this case is currently an exception and needs the 'docs' in the path.
-:openehr_am14_uml_diagrams: {openehr_am_releases}/docs/UML/AOM1.4/diagrams
+:openehr_am14_uml_diagrams: {openehr_am_releases}/UML/AOM1.4/diagrams
 :openehr_am: {openehr_am_releases}/index
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
@@ -89,7 +86,7 @@
 :openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
 :openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
 
-:openehr_rest_apis: {openehr_git}/specifications-ITS/docs
+:openehr_rest_apis: {openehr_git}/specifications-ITS
 :openehr_ehr_rest_api: {openehr_rest_apis}/ehr.html
 :openehr_query_rest_api: {openehr_rest_apis}/query.html
 :openehr_cds_rest_api: {openehr_rest_apis}/query.html
@@ -99,22 +96,21 @@
 //
 // openEHR online resources
 //
-:openehr_specification_program: {openehr_org}/programs/specification
-:openehr_awb: {openehr_org}/downloads/ADLworkbench
+:openehr_awb: {openehr_website_url}/downloads/ADLworkbench
 :openehr_awb_github: {openehr_git}/adl-tools
 :openehr_archie_github: {openehr_git}/archie
 :openehr_awb_profiles: {openehr_git}/adl-tools/tree/master/apps/resources/aom_profiles
 :openehr_technical_list: http://lists.openehr.org/mailman/listinfo/openehr-technical_lists.openehr.org
 :openehr_clinical_list: http://lists.openehr.org/mailman/listinfo/openehr-clinical_lists.openehr.org
-:openehr_CKM: {openehr_org}/ckm
-:modelling_tools: {openehr_org}/downloads/modellingtools
-:template_Designer: {openehr_org}/downloads/modellingtools
+:openehr_CKM: {openehr_website_url}/ckm
+:modelling_tools: {openehr_website_url}/downloads/modellingtools
+:template_Designer: {openehr_website_url}/downloads/modellingtools
 :openehr_java_libs: {openehr_git}/java-libs
 :openehr_oet_parser: {openehr_java_libs}/tree/master/oet-parser
 :openehr_its: {openehr_git}/specifications-ITS
 :openehr_its_rm_xsds: {openehr_its}/tree/master/RM/XML-schema
-:openehr_sec: {openehr_org}/programs/specification/editorialcommittee 
-:openehr_gehr: {openehr_org}/resources/related_projects#gehr
+:openehr_sec: {openehr_website_url}/programs/specification/editorialcommittee 
+:openehr_gehr: {openehr_website_url}/resources/related_projects#gehr
 
 :eomf_bmm: https://github.com/wolandscat/EOMF/tree/master/library/bmm
 
@@ -208,7 +204,7 @@
 :medscape_cannulation: http://emedicine.medscape.com/article/1998177-overview 
 :yawl: http://yawlfoundation.org/
 :semver: http://semver.org
-:asciidoctor: http://asciidoctor.org
+:asciidoctor_home: http://asciidoctor.org
 :apache_kafka: https://kafka.apache.org/
 :apache_avro: https://avro.apache.org/
 :apache_thrift: https://thrift.apache.org/
