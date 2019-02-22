@@ -14,6 +14,7 @@ USAGE="${0} [-fhrptv] [-l release] [component names]: generate publishing output
   -p : generate PDF as well								
   -t : generate debug trace of asciidoctor-pdf back-end.
   -l release : use a specific release e.g. 'Release-1.0.3' - only use with a single component e.g. 'RM'
+  -u : force UML regenerate
   -v : turn on asciidoctor verbose mode
 
   Component names are the XX part of specifications directories with names of the form
@@ -129,6 +130,7 @@ pdf_theme=openehr_full_pdf-theme.yml
 master_doc_name=master.adoc
 index_doc_name=index.adoc
 global_ref_repo=AA_GLOBAL
+uml_gen_dir=docs/UML/classes
 
 # relative location of UML directory under any specifications-XX directory
 uml_source_dir=computable/UML
@@ -171,10 +173,13 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "fhprtvl:" o; do
+while getopts "fuhprtvl:" o; do
     case "${o}" in
         f)
             force_generate=true
+            ;;
+        u)
+            uml_force_generate=true
             ;;
         r)
             use_remote_resources=true
@@ -266,18 +271,25 @@ for spec_component_dir in ${component_list[@]}; do
 		ts_uml=`find $uml_source_dir -printf "%T@\n" | sort | tail -1`
 
 		# get a timestamp of the generated UML docs dir
-		if [ -d docs/UML/classes ]; then
-			ts_uml_docs=`find docs/UML/classes -printf "%T@\n" | sort | tail -1`
+		if [ -d $uml_gen_dir ]; then
+			if [ "$(ls -A $uml_gen_dir)" ]; then
+				ts_uml_docs=`find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1`
+			else
+				uml_docs_empty=true
+			fi
 		fi
 
-		# if UML source newer than UML docs, regenerate UML docs
+		# if UML source newer than UML docs or no UML docs, regenerate
 		uml_regen_cmd=do_uml_generate-spec-$component.sh
-		if [[ $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_regen_cmd ]]; then
+		if [[ "$uml_force_generate" = true || \
+			  "$uml_docs_empty" = true || \
+			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_regen_cmd \
+		]]; then
 			echo "$uml_regen_cmd"
 			source $uml_regen_cmd
 
 			# regenerate timestamp of the generated UML docs dir
-			ts_uml_docs=`find docs/UML/classes -printf "%T@\n" | sort | tail -1`
+			ts_uml_docs=`find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1`
 		fi
 	fi
 
