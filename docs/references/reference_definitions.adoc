@@ -1,6 +1,8 @@
 //
 // openEHR specification resources; note variable substitutions in some of these for release id
 //
+
+// --------------- 1.0.2 legacy links ----------------
 :openehr_release_102: {openehr_specs}/releases/RM/Release-1.0.2
 :openehr_release_102_pdf: {openehr_specs}/releases/1.0.2/architecture
 :openehr_18308: {openehr_release_102_pdf}/requirements/iso18308_conformance.pdf
@@ -8,10 +10,19 @@
 :openehr_rm_102_data_types: {openehr_release_102_pdf}/rm/data_types_im.pdf
 :openehr_rm_102_support: {openehr_release_102_pdf}/rm/support_im.pdf
 
+:openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl1.4.pdf
+:openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom1.4.pdf
+
+:openehr_am_def_pri: {openehr_release_102_pdf}/am/archetype_principles.pdf
+:openehr_am_arch_sys: {openehr_release_102_pdf}/am/archetype_system.pdf
+:openehr_am_oap: {openehr_release_102_pdf}/am/openehr_archetype_profile.pdf 
+
+// --------------- AM ----------------
 :openehr_am_releases: {openehr_specs}/releases/AM/{am_release}
 :openehr_am_uml_diagrams: {openehr_am_releases}/UML/diagrams
 :openehr_am14_uml_diagrams: {openehr_am_releases}/UML/AOM1.4/diagrams
 :openehr_am: {openehr_am_releases}/index
+
 :openehr_am_overview: {openehr_am_releases}/Overview.html
 :openehr_am_adl14: {openehr_am_releases}/ADL1.4.html
 :openehr_am_aom14: {openehr_am_releases}/AOM1.4.html
@@ -20,41 +31,94 @@
 :openehr_am_opt2: {openehr_am_releases}/OPT2.html
 :openehr_am_id: {openehr_am_releases}/Identification.html
 
-:openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl1.4.pdf
-:openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom1.4.pdf
+// for link in preface part of docs
+:openehr_am_latest: {openehr_specs}/releases/AM/latest
+:openehr_am_latest_overview: {openehr_am_latest}/Overview.html
+:openehr_am_latest_adl14: {openehr_am_latest}/ADL1.4.html
+:openehr_am_latest_aom14: {openehr_am_latest}/AOM1.4.html
+:openehr_am_latest_adl2: {openehr_am_latest}/ADL2.html
+:openehr_am_latest_aom2: {openehr_am_latest}/AOM2.html
+:openehr_am_latest_opt2: {openehr_am_latest}/OPT2.html
+:openehr_am_latest_id: {openehr_am_latest}/Identification.html
 
-:openehr_cds_gdl: {openehr_specs}/releases/CDS/{cds_release}/GDL.html
-
+// --------------- BASE ----------------
 :openehr_base_releases: {openehr_specs}/releases/BASE/{base_release}
+
 :openehr_base_types: {openehr_base_releases}/base_types.html
 :openehr_foundation_types: {openehr_base_releases}/foundation_types.html
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
+
 :openehr_base_uml_diagrams: {openehr_base_releases}/UML/diagrams
 :openehr_base_release_102: {openehr_specs}/releases/BASE/Release-1.0.2
 
+// for link in preface part of docs
+:openehr_base_latest: {openehr_specs}/releases/BASE/latest
+:openehr_base_latest_base_types: {openehr_base_latest}/base_types.html
+:openehr_base_latest_foundation_types: {openehr_base_latest}/foundation_types.html
+:openehr_base_latest_resource: {openehr_base_latest}/resource.html
+:openehr_base_latest_overview: {openehr_base_latest}/architecture_overview.html
+
+// --------------- CDS ----------------
+:openehr_cds_releases: {openehr_specs}/releases/CDS/{cds_release}
+
+:openehr_cds_gdl: {openehr_cds_releases}/GDL.html
+
+// for link in preface part of docs
+:openehr_cds_latest: {openehr_specs}/releases/CDS/latest
+:openehr_cds_gdl: {openehr_cds_latest}/GDL.html
+
+// --------------- LANG ----------------
 :openehr_lang_releases: {openehr_specs}/releases/LANG/{lang_release}
+
 :openehr_odin: {openehr_lang_releases}/odin.html
 :openehr_bmm: {openehr_lang_releases}/bmm.html
 :openehr_bmm_persistence: {openehr_lang_releases}/bmm_persistence.html
 :openehr_expression_language: {openehr_lang_releases}/expression_language.html
 :openehr_decision_language: {openehr_lang_releases}/decision_language.html
 
+// for link in preface part of docs
+:openehr_lang_latest: {openehr_specs}/releases/LANG/latest
+:openehr_lang_latest_odin: {openehr_lang_latest}/odin.html
+:openehr_lang_latest_bmm: {openehr_lang_latest}/bmm.html
+:openehr_lang_latest_bmm_persistence: {openehr_lang_latest}/bmm_persistence.html
+:openehr_lang_latest_expression_language: {openehr_lang_latest}/expression_language.html
+:openehr_lang_latest_decision_language: {openehr_lang_latest}/decision_language.html
+
+// --------------- SM ----------------
 :openehr_sm_releases: {openehr_specs}/releases/SM/{sm_release}
 :openehr_sm_uml_diagrams: {openehr_sm_releases}/UML/diagrams
 
 :openehr_sm_openehr_platform: {openehr_sm_releases}/openehr_platform.html
 
+// for link in preface part of docs
+:openehr_sm_latest: {openehr_specs}/releases/SM/latest
+:openehr_sm_latest_openehr_platform: {openehr_sm_latest}/openehr_platform.html
+
+// --------------- QUERY ----------------
 :openehr_query_releases: {openehr_specs}/releases/QUERY/{query_release}
 :openehr_query_aql: {openehr_query_releases}/AQL.html
 
+// for link in preface part of docs
+:openehr_query_latest: {openehr_specs}/releases/QUERY/latest
+:openehr_query_latest_aql: {openehr_query_latest}/AQL.html
+
+// --------------- PROC ----------------
 :openehr_proc_releases: {openehr_specs}/releases/PROC/{proc_release}
+
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 :openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
 
+// for link in preface part of docs
+:openehr_proc_latest: {openehr_specs}/releases/PROC/latest
+:openehr_proc_latest_task_planning: {openehr_proc_latest}/task_planning.html
+:openehr_proc_latest_tp_vml: {openehr_proc_latest}/tp_vml.html
+
+// --------------- RM ----------------
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
-:openehr_rm_uml_diagrams: {openehr_rm_releases}/UML/diagrams
 :openehr_rm: {openehr_rm_releases}/index
+:openehr_rm_uml_diagrams: {openehr_rm_releases}/UML/diagrams
+
 :openehr_rm_data_types: {openehr_rm_releases}/data_types.html
 :openehr_rm_data_structures: {openehr_rm_releases}/data_structures.html
 :openehr_rm_common: {openehr_rm_releases}/common.html
@@ -63,22 +127,45 @@
 :openehr_rm_ehr_extract: {openehr_rm_releases}/ehr_extract.html
 :openehr_rm_integration: {openehr_rm_releases}/integration.html
 :openehr_rm_support: {openehr_rm_releases}/support.html
+
 :openehr_rm_103_support: {openehr_specs}/releases/RM/Release-1.0.3/support.html
 
-:openehr_am_def_pri: {openehr_release_102_pdf}/am/archetype_principles.pdf
-:openehr_am_arch_sys: {openehr_release_102_pdf}/am/archetype_system.pdf
-:openehr_am_oap: {openehr_release_102_pdf}/am/openehr_archetype_profile.pdf 
+// for link in preface part of docs
+:openehr_rm_latest: {openehr_specs}/releases/RM/latest
+:openehr_rm_latest_data_types: {openehr_rm_latest}/data_types.html
+:openehr_rm_latest_data_structures: {openehr_rm_latest}/data_structures.html
+:openehr_rm_latest_common: {openehr_rm_latest}/common.html
+:openehr_rm_latest_demographic: {openehr_rm_latest}/demographic.html
+:openehr_rm_latest_ehr: {openehr_rm_latest}/ehr.html
+:openehr_rm_latest_ehr_extract: {openehr_rm_latest}/ehr_extract.html
+:openehr_rm_latest_integration: {openehr_rm_latest}/integration.html
+:openehr_rm_latest_support: {openehr_rm_latest}/support.html
 
+// --------------- CNF ----------------
 :openehr_cnf_releases: {openehr_specs}/releases/CNF/{cnf_release}
 :openehr_cnf_component: {openehr_cnf_releases}/index
+
 :openehr_cnf_openehr_platform: {openehr_cnf_releases}/openehr_platform_conformance.html
 
-:openehr_terminology_releases: {openehr_specs}/releases/TERM/{term_release}
-:openehr_term_component: {openehr_terminology_releases}/index
-:openehr_terminology: {openehr_terminology_releases}/SupportTerminology.html
+// for link in preface part of docs
+:openehr_cnf_latest: {openehr_specs}/releases/CNF/latest
+:openehr_cnf_latest_openehr_platform: {openehr_cnf_latest}/openehr_platform_conformance.html
+
+// --------------- TERM ----------------
+:openehr_term_releases: {openehr_specs}/releases/TERM/{term_release}
+:openehr_term_component: {openehr_term_releases}/index
+
+:openehr_term_terminology: {openehr_term_releases}/SupportTerminology.html
+
+// for link in preface part of docs
+:openehr_term_latest: {openehr_specs}/releases/TERM/latest
+:openehr_term_latest_terminology: {openehr_term_latest}/SupportTerminology.html
+
+// Git links
 :openehr_terminology_resources: {openehr_git}/terminology
 :openehr_terminology_xml: {openehr_terminology_resources}/blob/master/openEHR_RM/en/openehr_terminology.xml
 
+// --------------- ITS ----------------
 :openehr_its_releases: {openehr_specs}/releases/ITS/{its_rest_release}
 :openehr_its_component: {openehr_its_releases}/index
 :openehr_its_rest_releases: {openehr_specs}/releases/ITS-REST/{its_rest_release}
@@ -94,7 +181,7 @@
 :openehr_demographic_rest_api: {openehr_rest_apis}/demographic.html
 
 //
-// openEHR online resources
+// ============== openEHR online resources ==============
 //
 :openehr_awb: {openehr_website_url}/downloads/ADLworkbench
 :openehr_awb_github: {openehr_git}/adl-tools
@@ -115,7 +202,7 @@
 :eomf_bmm: https://github.com/wolandscat/EOMF/tree/master/library/bmm
 
 //
-// e-Health online resources
+// =============== e-Health online resources ===============
 //
 :bfo: http://ifomis.uni-saarland.de/bfo/
 :fma: http://sig.biostr.washington.edu/projects/fm/
