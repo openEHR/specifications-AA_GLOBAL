@@ -129,6 +129,7 @@
 :openehr_rm_support: {openehr_rm_releases}/support.html
 
 :openehr_rm_103_support: {openehr_specs}/releases/RM/Release-1.0.3/support.html
+:openehr_rm_103_common: {openehr_specs}/releases/RM/Release-1.0.3/common.html
 
 // for link in preface part of docs
 :openehr_rm_latest: {openehr_specs}/releases/RM/latest
