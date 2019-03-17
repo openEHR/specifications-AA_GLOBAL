@@ -7,7 +7,7 @@
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_git: https://github.com/openEHR
 :openehr_specs: https://specifications.openehr.org
-:openehr_logo: {openehr_specs}/images/openehr_logo_large.png
+:openehr_logo: {openehr_specs}/images/openEHR_logo_RGB.svg
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 
 // UML relative directory for .adoc includes

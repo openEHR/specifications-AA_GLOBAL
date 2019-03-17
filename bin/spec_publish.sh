@@ -7,14 +7,14 @@
 #
 spec_component_dir_leader="specifications-"
 
-USAGE="${0} [-fhrptv] [-l release] [component names]: generate publishing outputs; HTML by default 
-  -f : force generation
+USAGE="${0} [-fuhrptv] [-l release] [component names]: generate publishing outputs; HTML by default 
+  -f : force document regeneration
+  -u : force UML regeneration
   -h : output this help										
   -r : use remote CSS file location from website
   -p : generate PDF as well								
   -t : generate debug trace of asciidoctor-pdf back-end.
   -l release : use a specific release e.g. 'Release-1.0.3' - only use with a single component e.g. 'RM'
-  -u : force UML regenerate
   -v : turn on asciidoctor verbose mode
 
   Component names are the XX part of specifications directories with names of the form
