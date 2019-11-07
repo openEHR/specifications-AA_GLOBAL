@@ -2,13 +2,18 @@
 :cc_licence_text: Creative Commons Attribution-NoDerivs 3.0 Unported.
 :cc_licence_url: https://creativecommons.org/licenses/by-nd/3.0/
 
+:apache_licence_text: Apache 2.0 Licence.
+:apache_licence_url: http://apache.org/licenses/LICENSE-2.0.html
+
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
 :openehr_specification_program: {openehr_website_url}/programs/specification
+:openehr_software_program: {openehr_website_url}/programs/software
 :openehr_git: https://github.com/openEHR
 :openehr_specs: https://specifications.openehr.org
 :openehr_logo: {openehr_specs}/images/openEHR_logo_RGB.svg
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
+:apache_licence_img: http://apache.org/img/ASF20thAnniversary.jpg
 
 // UML relative directory for .adoc includes
 :uml_export_dir: ../UML
@@ -21,20 +26,29 @@
 :diagrams_uri: {doc_name}/diagrams
 :images_uri: {doc_name}/images
 
+// mailing lists
+:openehr_mailing_lists: {openehr_website_url}/digital_media/mailinglists/
+:openehr_technical_mailing_list: {openehr_mailing_lists}/openehr-technical
+:openehr_clinical_mailing_list: {openehr_mailing_lists}/openehr-clinical
+
 //
 // openEHR Wiki URLs
 //
 :openehr_wiki_root: {openehr_specs}/wiki
 :openehr_wiki: {openehr_wiki_root}/spacedirectory/view.action
+:openehr_wiki_adl_space: {openehr_wiki_root}/spaces/ADL
 
 //
 // ========= Jira =========
 // links defined here are reprocessed in Nginx/Apache
 //
 :openehr_jira_home: {openehr_specs}/jira
+:openehr_prs: {openehr_jira_home}/projects/SPECPR
 :component_roadmap: {openehr_specs}/components/{component}/roadmap
 :component_history: {openehr_specs}/components/{component}/history
 :component_prs: {openehr_specs}/components/{component}/open_issues
+:adl_workbench_prs: {openehr_jira_home}/AWBPR
+:adl_workbench_dev: {openehr_jira_home}/AWB
 
 // URI for any issue, mapped to /jira/browse/<issue> in Apache rewrites
 // Second var is legacy name

@@ -1,0 +1,22 @@
+//
+// Short form front page block for software guides
+//
+[cols="^1,4", options="header"]
+|===
+2+^|(C) {current_year} The openEHR Foundation
+
+2+^|{openehr_website_url}[The openEHR Foundation^] is an independent, non-profit foundation, facilitating the sharing of health records by consumers and clinicians via open specifications, clinical models and open platform implementations.
+
+|*Issuer*
+|{openehr_software_program}[openEHR Software Program^]
+
+|*Keywords*
+|{keywords}
+
+|*Licence*
+|image:{apache_licence_img}[width=15%] {apache_licence_text} {apache_licence_url}
+
+|*Support*
+|Issues: {component_prs}[Problem Reports^]
+
+|===
