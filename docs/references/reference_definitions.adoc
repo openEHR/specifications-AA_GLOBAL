@@ -63,10 +63,12 @@
 :openehr_cds_releases: {openehr_specs}/releases/CDS/{cds_release}
 
 :openehr_cds_gdl: {openehr_cds_releases}/GDL.html
+:openehr_cds_gdl2: {openehr_cds_releases}/GDL2.html
 
 // for link in preface part of docs
 :openehr_cds_latest: {openehr_specs}/releases/CDS/latest
-:openehr_cds_gdl: {openehr_cds_latest}/GDL.html
+:openehr_cds_latest_gdl: {openehr_cds_latest}/GDL.html
+:openehr_cds_latest_gdl2: {openehr_cds_latest}/GDL2.html
 
 // --------------- LANG ----------------
 :openehr_lang_releases: {openehr_specs}/releases/LANG/{lang_release}
@@ -108,11 +110,13 @@
 
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 :openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
+:openehr_tp_examples: {openehr_proc_releases}/tp_examples.html
 
 // for link in preface part of docs
 :openehr_proc_latest: {openehr_specs}/releases/PROC/latest
 :openehr_proc_latest_task_planning: {openehr_proc_latest}/task_planning.html
 :openehr_proc_latest_tp_vml: {openehr_proc_latest}/tp_vml.html
+:openehr_proc_latest_tp_examples: {openehr_proc_latest}/tp_examples.html
 
 // --------------- RM ----------------
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
@@ -124,6 +128,7 @@
 :openehr_rm_common: {openehr_rm_releases}/common.html
 :openehr_rm_demographic: {openehr_rm_releases}/demographic.html
 :openehr_rm_ehr: {openehr_rm_releases}/ehr.html
+:openehr_rm_ehr_diagrams: {openehr_rm_releases}/ehr/diagrams
 :openehr_rm_ehr_extract: {openehr_rm_releases}/ehr_extract.html
 :openehr_rm_integration: {openehr_rm_releases}/integration.html
 :openehr_rm_support: {openehr_rm_releases}/support.html
@@ -167,18 +172,24 @@
 :openehr_terminology_xml: {openehr_terminology_resources}/blob/master/openEHR_RM/en/openehr_terminology.xml
 
 // --------------- ITS ----------------
-:openehr_its_releases: {openehr_specs}/releases/ITS/{its_rest_release}
+:openehr_its_releases: {openehr_specs}/releases/ITS/{its_release}
 :openehr_its_component: {openehr_its_releases}/index
+// for now, ITS-REST has its own docs index, but the other 3 do not
 :openehr_its_rest_releases: {openehr_specs}/releases/ITS-REST/{its_rest_release}
-:openehr_its_xml_releases: {openehr_specs}/releases/ITS-XML/{its_xml_release}
-:openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
-:openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
+:openehr_its_xml_releases: {openehr_its_releases}
+:openehr_its_json_releases: {openehr_its_releases}
+:openehr_its_bmm_releases: {openehr_its_releases}
+//:openehr_its_xml_releases: {openehr_specs}/releases/ITS-XML/{its_xml_release}
+//:openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
+//:openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
 
 :openehr_ehr_rest_api: {openehr_its_rest_releases}/ehr.html
 :openehr_query_rest_api: {openehr_its_rest_releases}/query.html
 :openehr_cds_rest_api: {openehr_its_rest_releases}/query.html
 :openehr_definitions_rest_api: {openehr_its_rest_releases}/definitions.html
 :openehr_demographic_rest_api: {openehr_its_rest_releases}/demographic.html
+
+:openehr_json_commit_formats: {openehr_its_rest_releases}/json_commit_formats.html
 
 // Github
 :openehr_its: {openehr_git}/specifications-ITS
@@ -205,12 +216,21 @@
 // tools
 :openehr_awb: {openehr_website_url}/downloads/ADLworkbench
 :openehr_awb_github: {openehr_git}/adl-tools
+:openehr_adl_archetypes_github: {openehr_git}/adl-archetypes
 :openehr_archie_github: {openehr_git}/archie
 :openehr_awb_profiles: {openehr_git}/adl-tools/tree/master/apps/resources/aom_profiles
 :openehr_java_libs: {openehr_git}/java-libs
 :openehr_oet_parser: {openehr_java_libs}/tree/master/oet-parser
+:openehr_reference_models_github: {openehr_git}/reference-models
 
 :eomf_bmm: https://github.com/wolandscat/EOMF/tree/master/library/bmm
+
+// GDL
+:gdl_lang_site: https://gdl-lang.org/
+:gdl2_migration_tutorial: {gdl_lang_site}/the-project/guides-tutorials/gdl2-guideline-migration-tutorial
+:gdl_github: https://github.com/gdl-lang
+:gdl_models_github: {gdl_github}/common-clinical-models/tree/master/gdl2
+:gdl_wiki: {gdl_github}/common-clinical-models/wiki
 
 //
 // =============== e-Health online resources ===============
@@ -268,12 +288,12 @@
 //
 // IETF
 //
-:rfc2396: http://www.ietf.org/rfc/rfc2396
-:rfc4880: http://www.ietf.org/rfc/rfc4880
-:rfc3986: http://www.ietf.org/rfc/rfc3986
-:rfc4122: http://www.ietf.org/rfc/rfc4122
-:rfc2781: http://www.ietf.org/html/rfc2781
-:rfc5646: http://tools.ietf.org/html/rfc5646
+:rfc2396: https://www.ietf.org/rfc/rfc2396
+:rfc4880: https://www.ietf.org/rfc/rfc4880
+:rfc3986: https://www.ietf.org/rfc/rfc3986
+:rfc4122: https://www.ietf.org/rfc/rfc4122
+:rfc2781: https://www.ietf.org/html/rfc2781
+:rfc5646: https://tools.ietf.org/html/rfc5646
 
 //
 // ISO
@@ -290,6 +310,8 @@
 //
 :wikipedia: https://en.wikipedia.org/wiki/
 :wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
+:wikipedia_currying: {wikipedia}/Currying 
+:wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
 :iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
 :iso_8601: {wikipedia}/ISO_8601
 :iso_rm_odp: {wikipedia}/RM-ODP
@@ -312,3 +334,5 @@
 :typescript: https://www.typescriptlang.org
 :commonmark_spec: https://spec.commonmark.org/ 
 :perl_regex: https://perldoc.perl.org/perlre.html
+:winmerge: http://winmerge.org/
+:json: http://json.org
