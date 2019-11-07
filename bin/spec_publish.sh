@@ -1,24 +1,30 @@
 #!/bin/bash
 
-# RUN THIS SCRIPT FROM THE DIRECTORY CONTAINING Git specifications-XX repo clones
+# This script will run asciidoctor on documents found under a directory structure
+# which is by default specifications-XX/docs/xxxx, or with the -n option, just
+# dddd/docs/xxxx.
 
 #
 # ============== Definitions =============
 #
-spec_component_dir_leader="specifications-"
+def_dir_leader="specifications-"
+dir_leader=${def_dir_leader}
 
-USAGE="${0} [-fuhrptv] [-l release] [component names]: generate publishing outputs; HTML by default 
+
+USAGE="${0} [-nfuhrptv] [-m pub_hom_dir] [-l release] [component names]: generate publishing outputs; HTML by default 
   -f : force document regeneration
+  -n : turn off default directory pattern ${def_dir_leader}
   -u : force UML regeneration
   -h : output this help										
   -r : use remote CSS file location from website
   -p : generate PDF as well								
   -t : generate debug trace of asciidoctor-pdf back-end.
+  -m dir : set a specific publishing home location; default is parent of openEHR specs dirs
   -l release : use a specific release e.g. 'Release-1.0.3' - only use with a single component e.g. 'RM'
   -v : turn on asciidoctor verbose mode
 
   Component names are the XX part of specifications directories with names of the form
-  ${spec_component_dir_leader}XX; 
+  ${def_dir_leader}XX; 
 
   Examples:
     ${0} AM                      # publish AM component using local CSS
@@ -28,7 +34,7 @@ USAGE="${0} [-fuhrptv] [-l release] [component names]: generate publishing outpu
 "
 
 NO_COMPONENTS_ERR="No components found. A 'component' is a name like 'AM', 'RM' etc, 
-   that forms the final part of a directory with a name of the form '${spec_component_dir_leader}XX'
+   that forms the final part of a directory with a name of the form '${def_dir_leader}XX'
 "
 
 COMPONENTS_RELEASE_ERR="When specifying a fixed release, only one component may be specified
@@ -139,27 +145,6 @@ specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
 
 # ------------- static vars --------------
-# specifications root dir: this directory must contain clones of all the specifications-XX repos
-# as well as the adl-antlr repo.
-spec_root=$PWD
-echo "setting spec_root to $spec_root"
-
-# directory of specifications-AA_GLOBAL repo clone from a specifications-XX/docs/xxx directory
-# resolved during processing of this script
-ref_dir=$spec_root/specifications-$global_ref_repo
-echo "setting ref_dir to $ref_dir"
-
-# set the following only for re-publishing old releases
-base_dir=$spec_root/specifications-BASE
-echo "setting base_dir to $base_dir"
-
-# generate a clean directory that can act as a URI for CSS; remove any
-# cygdrive prefix added if we are running under cygwin
-local_ref_uri=${PWD#/cygdrive/c}/specifications-$global_ref_repo
-
-# Asciidoctor var: location of Antlr grammars
-grammar_dir=$spec_root/adl-antlr/src/main/antlr/
-
 # release id
 default_release=latest
 release=$default_release
@@ -173,8 +158,11 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "fuhprtvl:" o; do
+while getopts "nfuhprtvm:l:" o; do
     case "${o}" in
+        n)
+            dir_leader=""
+            ;;
         f)
             force_generate=true
             ;;
@@ -196,6 +184,9 @@ while getopts "fuhprtvl:" o; do
         l)
             release=$OPTARG
             ;;
+        m)
+            pub_home=$OPTARG
+            ;;
         v)
             verbose_mode=true
             ;;
@@ -205,6 +196,29 @@ while getopts "fuhprtvl:" o; do
     esac
 done
 shift $((OPTIND-1))
+
+# specifications root dir: this directory must contain clones of all the specifications-XX repos
+# as well as the adl-antlr repo.
+work_root=$PWD
+pub_home=${pub_home:-$PWD}
+echo "setting pub_home to $pub_home"
+echo "setting work_root to $work_root"
+
+# directory of specifications-AA_GLOBAL repo clone from a specifications-XX/docs/xxx directory
+# resolved during processing of this script
+ref_dir=$pub_home/specifications-$global_ref_repo
+echo "setting ref_dir to $ref_dir"
+
+# set the following only for re-publishing old releases
+base_dir=$pub_home/specifications-BASE
+echo "setting base_dir to $base_dir"
+
+# generate a clean directory that can act as a URI for CSS; remove any
+# cygdrive prefix added if we are running under cygwin
+local_ref_uri=${PWD#/cygdrive/c}/specifications-$global_ref_repo
+
+# Asciidoctor var: location of Antlr grammars
+grammar_dir=$pub_home/adl-antlr/src/main/antlr/
 
 # Generate special release Asciidoctor option if 'release' was set; only one component is allowed
 # in this case, because releases are component specific.
@@ -229,12 +243,12 @@ fi
 # see if there are individual args like 'AM', 'RM' etc
 if [ $# -ge 1 ]; then
 	while [ $# -ge 1 ]; do
-		component_args="${component_args} ${spec_component_dir_leader}$1"
+		component_args="${component_args} ${dir_leader}$1"
 		shift
 	done
 	component_list=($component_args)
 else
-	component_list=$(ls -1d ${spec_component_dir_leader}*)
+	component_list=$(ls -1d ${dir_leader}*)
 fi
 
 # determine component list
@@ -257,11 +271,11 @@ echo "setting stylesdir to $stylesdir"
 
 # ---------- do the publishing ----------
 
-for spec_component_dir in ${component_list[@]}; do 
+for component_dir in ${component_list[@]}; do 
 
-	echo "========= cd $spec_component_dir =========="
-	cd $spec_component_dir
-	component=${spec_component_dir#"$spec_component_dir_leader"}
+	echo "========= cd $component_dir =========="
+	cd $component_dir
+	component=${component_dir#"$dir_leader"}
 
 	# re-run UML extractor to create UML doc files if applicable
 	# get a timestamp of UML dir
@@ -340,7 +354,7 @@ for spec_component_dir in ${component_list[@]}; do
 
 	echo 
 
-	cd ${spec_root}
+	cd ${work_root}
 done
 
 # cleanup 'http*' directories that bug in Asciidoctor 1.5.2 creates
