@@ -54,6 +54,8 @@ run_asciidoctor () {
 	out_file=${2}${1}.html
 
 	# work out the options
+	# add following line back in when working
+	#	-r asciidoctor-bibtex \
 	opts="$4 \
 		-a current_year=$year \
 		-a grammar_dir=$grammar_dir \
@@ -65,7 +67,6 @@ run_asciidoctor () {
 		-a stylesheet=$stylesheet \
 		-a release=$release \
 		-a doc_name=${1} \
-		-r asciidoctor-bibtex \
 		--out-file=$out_file"
 
 	# -v verbose
@@ -91,6 +92,8 @@ run_asciidoctor_pdf () {
 	out_file=${2}${1}.html
 
 	# work out the options
+	# add following line back in when working
+	#	-r asciidoctor-bibtex \
 	opts="$4 \
 		-a current_year=$year \
 		-a stylesdir=$stylesdir \
@@ -104,7 +107,6 @@ run_asciidoctor_pdf () {
 		-a pdf-style=$pdf_theme \
 		-a pdf-stylesdir=$ref_dir/resources \
 		-a allow-uri-read \
-		-r asciidoctor-bibtex \
 		-r asciidoctor-pdf -b pdf \
 		--out-file=$out_file"
 
