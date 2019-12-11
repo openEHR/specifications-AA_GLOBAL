@@ -249,11 +249,17 @@
 :ogms: https://code.google.com/p/ogms/
 :protege: http://protege.stanford.edu/
 :snomed_ct: http://www.ihtsdo.org
+:snomed_uris: https://confluence.ihtsdotools.org/display/DOCURI/URI+Standard
 :who_icd: http://www.who.int/classifications/icd/en/
 :who_icpc: http://www.who.int/classifications/icd/adaptations/icpc2/en/
 :ucum: http://unitsofmeasure.org/ucum.html
-:nlm_umls_list: https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html#
+:nlm_umls_list: https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html
 :loc_lang_codes: http://www.loc.gov/standards/iso639-2/langhome.html 
+
+//
+// IEEE
+//
+:ieee_828: https://standards.ieee.org/standard/828-2005.html
 
 //
 // HL7
@@ -265,11 +271,17 @@
 :hl7_observation_statuses: {hl7_fhir}/valueset-observation-interpretation.html
 :hl7_participation_signature: {hl7_fhir}/v3/ParticipationSignature/cs.html
 :hl7_participation_mode: {hl7_fhir}/v3/ParticipationMode/cs.html
+:hl7_cda: {hl7}/implement/standards/product_brief.cfm?product_id=7
+:hl7v3: {hl7}/implement/standards/product_brief.cfm?product_id=186
+:hl7v3_data_types: {hl7}/implement/standards/product_brief.cfm?product_id=264
+:hl7v3_rim: {hl7}/implement/standards/rim.cfm
+:hl7v3_arden: {hl7}/special/Committees/arden/index.cfm
+:hl7v3_gello: {hl7}/implement/standards/product_brief.cfm?product_id=5
 
 //
 // W3C
 //
-:xml_schema: https://www.w3.org/XML/Schema
+:w3c_xml_schema: https://www.w3.org/XML/Schema
 :xpath: https://www.w3.org/TR/xpath-31/
 :xquery: https://www.w3.org/XML/Query/
 :w3c_owl: https://www.w3.org/TR/2003/CR-owl-ref-20030818/
@@ -278,27 +290,53 @@
 //
 // OMG
 //
-:bpmn: http://www.bpmn.org/
-:omg_idl: https://www.omg.org/spec/IDL/
-:cmmn: http://www.omg.org/spec/CMMN/1.0/
-:dmn: http://www.omg.org/spec/DMN/
-:uml: http://www.omg.org/spec/UML/
+:omg: https://www.omg.org/
+:omg_bpmn: http://www.bpmn.org/
+:omg_idl: {omg}/spec/IDL/
+:omg_cmmn: {omg}/spec/CMMN/1.0/
+:omg_dmn: {omg}/spec/DMN/
+:omg_uml: {omg}/spec/UML/
+:omg_ocl: {omg}/spec/OCL/
+:omg_pids: {omg}/spec/PIDS/
+:omg_lqs: {omg}/spec/LQS/
+:omg_coas: {omg}/spec/COAS/
+:omg_corbamed: {omg}/spec/COAS/
+
+// Unicode
 :unicode_countries_list: http://www.unicode.org/unicode/onlinedat/countries.html
 
 //
 // IETF
 //
-:rfc2396: https://www.ietf.org/rfc/rfc2396
-:rfc4880: https://www.ietf.org/rfc/rfc4880
-:rfc3986: https://www.ietf.org/rfc/rfc3986
-:rfc4122: https://www.ietf.org/rfc/rfc4122
-:rfc2781: https://www.ietf.org/html/rfc2781
+:ietf: https://www.ietf.org
+:rfc2396: {ietf}/rfc/rfc2396
+:rfc4880: {ietf}/rfc/rfc4880
+:rfc3986: {ietf}/rfc/rfc3986
+:rfc4122: {ietf}/rfc/rfc4122
+:rfc2781: {ietf}/html/rfc2781
 :rfc5646: https://tools.ietf.org/html/rfc5646
 
 //
 // ISO
 //
+:iso: https://www.iso.org
 :iso_8601_official: https://www.iso.org/iso-8601-date-and-time-format.html
+:iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
+:iso_8601: {wikipedia}/ISO_8601
+:iso_rm_odp: {wikipedia}/RM-ODP
+:iso_2788: {iso}/standard/7776.html
+:iso_5964: {iso}/standard/12159.html
+
+:iso_13606: {iso}/standard/40784.html
+:iso_13606-1: {iso}/standard/40784.html
+:iso_13606-2: {iso}/standard/50119.html
+:iso_13606-3: {iso}/standard/50120.html
+:iso_13606-4: {iso}/standard/50121.html
+
+:iso_18308: {iso}/standard/52823.html
+:iso_20514: {iso}/standard/39525.html
+:iso_13940: {iso}/standard/58102.html
+:iso_22600: {iso}/standard/62653.html
 
 //
 // ECMA
@@ -312,11 +350,15 @@
 :wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
 :wikipedia_currying: {wikipedia}/Currying 
 :wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
-:iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
-:iso_8601: {wikipedia}/ISO_8601
-:iso_rm_odp: {wikipedia}/RM-ODP
 :soap_protocol: {wikipedia}/SOAP
 :rest_ws: {wikipedia}/Representational_state_transfer
+
+//
+// Apache
+//
+:apache_kafka: https://kafka.apache.org/
+:apache_avro: https://avro.apache.org/
+:apache_thrift: https://thrift.apache.org/
 
 //
 // general IT
@@ -325,9 +367,7 @@
 :yawl: http://yawlfoundation.org/
 :semver: http://semver.org
 :asciidoctor_home: http://asciidoctor.org
-:apache_kafka: https://kafka.apache.org/
-:apache_avro: https://avro.apache.org/
-:apache_thrift: https://thrift.apache.org/
+
 :ampq: https://www.amqp.org/
 :google_protobuf: https://github.com/google/protobuf/wiki
 :zeroc_ice: https://zeroc.com/products/ice#what-is-ice

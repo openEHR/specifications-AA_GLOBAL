@@ -1,7 +1,7 @@
 //
 // document id block - include into full front page file
 //
-[cols="1,1"]
+[cols="1,1",align="center"]
 |===
 2+^|*Issuer*: {openehr_specification_program}[openEHR Specification Program^]
 

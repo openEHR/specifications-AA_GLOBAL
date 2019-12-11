@@ -65,11 +65,16 @@ run_asciidoctor () {
 		-a stylesheet=$stylesheet \
 		-a release=$release \
 		-a doc_name=${1} \
+		-r asciidoctor-bibtex \
 		--out-file=$out_file"
 
 	# -v verbose
 	if [ "$verbose_mode" = true ]; then
 		opts="${opts} -v"
+	fi
+
+	if [ "$trace" = true ]; then
+		opts="${opts} --trace"
 	fi
 
 	asciidoctor ${opts} $3
@@ -99,6 +104,7 @@ run_asciidoctor_pdf () {
 		-a pdf-style=$pdf_theme \
 		-a pdf-stylesdir=$ref_dir/resources \
 		-a allow-uri-read \
+		-r asciidoctor-bibtex \
 		-r asciidoctor-pdf -b pdf \
 		--out-file=$out_file"
 
@@ -108,7 +114,7 @@ run_asciidoctor_pdf () {
 	fi
 
 	# -a pdf-fontsdir=path/to/fonts 
-	if [ "$pdf_trace" = true ]; then
+	if [ "$trace" = true ]; then
 		opts="${opts} --trace"
 	fi
 
@@ -176,7 +182,7 @@ while getopts "nfuhprtvm:l:" o; do
             gen_pdf=true
             ;;
         t)
-            pdf_trace=true
+            trace=true
             ;;
         h)
             usage
