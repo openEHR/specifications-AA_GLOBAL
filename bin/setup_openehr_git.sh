@@ -20,7 +20,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 		if [ -d $repo ]; then
 			echo "$repo already cloned; skipping"
 		else
-			echo "git clone $repo_clone_url"
+			git clone $repo_clone_url
 		fi
 	done
 fi
