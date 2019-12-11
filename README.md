@@ -11,11 +11,10 @@ Firstly, you need to install asciidoctor. This is generally painless - [see here
 
 Secondly you may need MagicDraw, since UML diagrams and definitions are extracted from the UML binary files via MagicDraw. Please contact the openEHR SEC if this is the case.
 
-Now you need to clone this repo, and set up the publisher script:
+Now you need to clone the openEHR specifications repos, as follows:
 
-1. Create a directory `openEHR-specifications` or similar in which you will clone the various specifications repositories.
-2. clone this repository into that directory, along with any other specifications-xx repositories you are working on
-3. copy the script /bin/do_spec_publish.sh into the parent directory of your cloned repos, e.g. `openEHR-specifications`.
+1. Create a directory `openEHR-specifications` or similar to contain the specifications git repo clones
+2. Download [this bash script]https://github.com/openEHR/specifications-AA_GLOBAL/blob/master/bin/setup_openehr_git.sh into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
 
 You are now ready to go. From the parent directory, in a bash shell, type:
 ```
