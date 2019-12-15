@@ -232,15 +232,16 @@
 :gdl_models_github: {gdl_github}/common-clinical-models/tree/master/gdl2
 :gdl_wiki: {gdl_github}/common-clinical-models/wiki
 
+// IANA
+:iana: http://www.iana.org/
+:iana_character_sets: {iana}/assignments/character-sets
+:iana_media_types: {iana}/assignments/media-types/text
+
 //
 // =============== e-Health online resources ===============
 //
 :bfo: http://ifomis.uni-saarland.de/bfo/
 :fma: http://sig.biostr.washington.edu/projects/fm/
-:iana: http://www.iana.org/
-:iana_character_sets: {iana}/assignments/character-sets
-:iana_media_types: {iana}/assignments/media-types/text/
-
 :iao:  https://code.google.com/p/information-artifact-ontology/
 :ihtsdo: http://www.ihtsdo.org
 :linkehr: http://linkehr.com 
@@ -277,12 +278,13 @@
 :hl7v3_rim: {hl7}/implement/standards/rim.cfm
 :hl7v3_arden: {hl7}/special/Committees/arden/index.cfm
 :hl7v3_gello: {hl7}/implement/standards/product_brief.cfm?product_id=5
+:hl7_cimi: https://cimi.hl7.org/index.html
 
 //
 // W3C
 //
 :w3c_xml_schema: https://www.w3.org/XML/Schema
-:xpath: https://www.w3.org/TR/xpath-31/
+:w3c_xpath: https://www.w3.org/TR/xpath-31/
 :xquery: https://www.w3.org/XML/Query/
 :w3c_owl: https://www.w3.org/TR/2003/CR-owl-ref-20030818/
 :w3c_uri_addressing: http://www.w3.org/Addressing 
@@ -317,6 +319,18 @@
 :rfc5646: https://tools.ietf.org/html/rfc5646
 
 //
+// Wikipedia
+//
+:wikipedia: https://en.wikipedia.org/wiki/
+:wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
+:wikipedia_currying: {wikipedia}/Currying 
+:wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
+:wikipedia_cov_contra: {wikipedia}/Covariance_and_contravariance_(computer_science) 
+:wikipedia_tnm: {wikipedia}/TNM_staging_system
+:soap_protocol: {wikipedia}/SOAP
+:rest_ws: {wikipedia}/Representational_state_transfer
+
+//
 // ISO
 //
 :iso: https://www.iso.org
@@ -342,16 +356,6 @@
 // ECMA
 //
 :eiffel_ecma_367: http://www.ecma-international.org/publications/standards/Ecma-367.htm
-
-//
-// Wikipedia
-//
-:wikipedia: https://en.wikipedia.org/wiki/
-:wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
-:wikipedia_currying: {wikipedia}/Currying 
-:wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
-:soap_protocol: {wikipedia}/SOAP
-:rest_ws: {wikipedia}/Representational_state_transfer
 
 //
 // Apache
