@@ -21,6 +21,7 @@ USAGE="${0} [-nfuhrptv] [-m pub_hom_dir] [-l release] [component names]: generat
   -t : generate debug trace of asciidoctor-pdf back-end.
   -m dir : set a specific publishing home location; default is parent of openEHR specs dirs
   -l release : use a specific release e.g. 'Release-1.0.3' - only use with a single component e.g. 'RM'
+  -w : turn on missing attribute warnings
   -v : turn on asciidoctor verbose mode
 
   Component names are the XX part of specifications directories with names of the form
@@ -67,18 +68,25 @@ run_asciidoctor () {
 		-a stylesheet=$stylesheet \
 		-a release=$release \
 		-a doc_name=${1} \
-		--out-file=$out_file"
+		-a bibtex-file=$ref_dir/docs/references/references.bib"
+
+	# -w missing attribute warnings
+	if [ "$warn_missing_attrs" = true ]; then
+		opts="${opts} -a attribute-missing=warn"
+	fi
 
 	# -v verbose
 	if [ "$verbose_mode" = true ]; then
 		opts="${opts} -v"
 	fi
 
+	# -t trace
 	if [ "$trace" = true ]; then
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} $3
+	asciidoctor ${opts} -r asciidoctor-bibtex --out-file=$out_file $3
+		
 	echo generated $(pwd)/$out_file
 }
 
@@ -95,6 +103,7 @@ run_asciidoctor_pdf () {
 	# add following line back in when working
 	#	-r asciidoctor-bibtex \
 	opts="$4 \
+		-a attribute-missing=warn \
 		-a current_year=$year \
 		-a stylesdir=$stylesdir \
 		-a grammar_dir=$grammar_dir \
@@ -104,23 +113,27 @@ run_asciidoctor_pdf () {
 		-a base_dir=$base_dir \
 		-a release=$release \
 		-a doc_name=${1} \
+		-a allow-uri-read \
 		-a pdf-style=$pdf_theme \
 		-a pdf-stylesdir=$ref_dir/resources \
-		-a allow-uri-read \
-		-r asciidoctor-pdf -b pdf \
-		--out-file=$out_file"
+		-a bibtex-file=$ref_dir/docs/references/references.bib"
+
+	# -w missing attribute warnings
+	if [ "$warn_missing_attrs" = true ]; then
+		opts="${opts} -a attribute-missing=warn"
+	fi
 
 	# -v verbose
 	if [ "$verbose_mode" = true ]; then
 		opts="${opts} -v"
 	fi
 
-	# -a pdf-fontsdir=path/to/fonts 
+	# -t trace
 	if [ "$trace" = true ]; then
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} $3
+	asciidoctor ${opts} -r asciidoctor-pdf -b pdf -r asciidoctor-bibtex --out-file=$out_file $3
 	echo generated $(pwd)/$out_file
 }
 
@@ -166,7 +179,7 @@ ad_varargs=""
 #
 
 # ---------- get the options ----------
-while getopts "nfuhprtvm:l:" o; do
+while getopts "nfuhprtwvm:l:" o; do
     case "${o}" in
         n)
             dir_leader=""
@@ -194,6 +207,9 @@ while getopts "nfuhprtvm:l:" o; do
             ;;
         m)
             pub_home=$OPTARG
+            ;;
+        w)
+            warn_missing_attrs=true
             ;;
         v)
             verbose_mode=true
