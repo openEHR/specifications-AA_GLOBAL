@@ -4,9 +4,8 @@
 //
 
 :doctype: book
-//:source-highlighter: pygments
-//:pygments-style: murphy
-//:toc: macro
+:source-highlighter: pygments
+:pygments-style: murphy
 :toc: left
 :toclevels: 4
 :pagenums:
