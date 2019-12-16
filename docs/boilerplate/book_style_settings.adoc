@@ -4,7 +4,7 @@
 //
 
 :doctype: book
-:source-highlighter: pygments
+//:source-highlighter: pygments
 //:pygments-style: murphy
 //:toc: macro
 :toc: left
@@ -18,6 +18,6 @@
 :chapter-label:
 
 // ==== asciidoctor-bibtex settings
-:bibtex-style: apa
-:bibtex-file: {ref_dir}/docs/references/references.bib
+// Location of .bib file is given on command line
+:bibtex-style: apa-5th-edition
 :bibtex-throw: true
