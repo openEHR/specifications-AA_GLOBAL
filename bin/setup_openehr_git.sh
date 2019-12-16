@@ -11,15 +11,18 @@ name="openEHR"
 # repo keys
 repo_keys='specifications-|adl-antlr|asciidoctor-stylesheet-factory'
 
-read -p "About to clone specifications repos from $name @ Github into directory $PWD; continue[Yy]? "
+read -p "About to clone or update specifications repos from $name @ Github into directory $PWD; continue[Yy]? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
 	# Do the specifications-* repos first
 	repo_urls=`curl -s "https://api.github.com/$context/$name/repos?per_page=200" | grep -w clone_url`
 	echo "$repo_urls" | grep -E "$repo_keys" | cut -d \" -f 4 |  while read repo_clone_url ; do
-		repo=`echo $repo_clone_url | sed 's/^.*\/\([^/]+\)\.git/$1/'`
+		repo=`echo $repo_clone_url | sed -e 's/^.*\/\([^/]*\)\.git/\1/'`
+		echo "------------- Processing $repo --------------"
 		if [ -d $repo ]; then
-			echo "$repo already cloned; skipping"
+			echo "$repo already cloned; pulling ..."
+			cd $repo ; git pull --progress ; cd ..
 		else
+			echo "cloning ..."
 			git clone $repo_clone_url
 		fi
 	done
