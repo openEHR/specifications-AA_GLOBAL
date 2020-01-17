@@ -14,7 +14,7 @@ Secondly you may need MagicDraw, since UML diagrams and definitions are extracte
 Now you need to clone the openEHR specifications repos, as follows:
 
 1. Create a directory `openEHR-specifications` or similar to contain the specifications git repo clones
-2. Download [this bash script](https://github.com/openEHR/specifications-AA_GLOBAL/blob/master/bin/setup_openehr_git.sh) into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
+2. Download [the bash script /bin/setup_openehr_git.sh](https://github.com/openEHR/specifications-AA_GLOBAL/blob/master/bin/setup_openehr_git.sh) into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
 
 You are now ready to go. From the parent directory, in a bash shell, type:
 ```
@@ -26,3 +26,5 @@ To find out what else you can do, type:
 ```
 $ ./do_spec_publish -h
 ```
+
+Whenever you want to publish changes made over time at some later date, re-run `./setup_openehr_git.sh`, which will now perform `git pull` commands on the relevant repositories, and then run `./do_spec_publish`.
