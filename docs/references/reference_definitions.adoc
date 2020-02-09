@@ -327,6 +327,7 @@
 :wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
 :wikipedia_cov_contra: {wikipedia}/Covariance_and_contravariance_(computer_science) 
 :wikipedia_tnm: {wikipedia}/TNM_staging_system
+:wikipedia_seven_plus_or_minus_two: {wikipedia}/The_Magical_Number_Seven,_Plus_or_Minus_Two
 :soap_protocol: {wikipedia}/SOAP
 :rest_ws: {wikipedia}/Representational_state_transfer
 
