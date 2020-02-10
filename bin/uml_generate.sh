@@ -22,14 +22,21 @@ fi
 md_cp_url=file:$md_home_url_leader/bin/magicdraw.properties?base=$md_home_url_base#CLASSPATH
 echo md_cp_url = $md_cp_url
 
-CP="$MAGICDRAW_HOME/lib/com.nomagic.osgi.launcher-17.0.5-SNAPSHOT.jar$cp_delim$MAGICDRAW_HOME/lib/bundles/org.eclipse.osgi_3.10.1.v20140909-1633.jar$cp_delim$MAGICDRAW_HOME/lib/bundles/com.nomagic.magicdraw.osgi.fragment_1.0.0.201512211944.jar$cp_delim$MAGICDRAW_HOME/lib/md_api.jar$cp_delim$MAGICDRAW_HOME/lib/md_common_api.jar$cp_delim$MAGICDRAW_HOME/lib/md.jar$cp_delim$MAGICDRAW_HOME/lib/md_common.jar$cp_delim$MAGICDRAW_HOME/lib/jna.jar"
+OSGI_LAUNCHER=$(echo "$MAGICDRAW_HOME"/lib/com.nomagic.osgi.launcher-*.jar)
+OSGI_FRAMEWORK=$(echo "$MAGICDRAW_HOME"/lib/bundles/org.eclipse.osgi_*.jar)
+MD_OSGI_FRAGMENT=$(echo "$MAGICDRAW_HOME"/lib/bundles/com.nomagic.magicdraw.osgi.fragment_*.jar)
+ 
+CP="${OSGI_LAUNCHER}${cp_delim}${OSGI_FRAMEWORK}${cp_delim}${MD_OSGI_FRAGMENT}${cp_delim}\
+`  `$MAGICDRAW_HOME/lib/md_api.jar${cp_delim}$MAGICDRAW_HOME/lib/md_common_api.jar${cp_delim}\
+`  `$MAGICDRAW_HOME/lib/md.jar${cp_delim}$MAGICDRAW_HOME/lib/md_common.jar${cp_delim}\
+`  `$MAGICDRAW_HOME/lib/jna.jar"
 
 java -Xmx1200M -Xss1024K \
        -Dmd.class.path=$md_cp_url \
        -Dcom.nomagic.osgi.config.dir="$MAGICDRAW_HOME/configuration" \
        -Desi.system.config="$MAGICDRAW_HOME/data/application.conf" \
        -Dlogback.configurationFile="$MAGICDRAW_HOME/data/logback.xml" \
-       -Dcom.nomagic.magicdraw.launcher=org.openehr.bmm.magicdraw.UmlBmmExporterCommandLine  \
+       -Dcom.nomagic.magicdraw.launcher=org.openehr.adoc.magicdraw.UmlAdocExporterCommandLine  \
        -cp "$CP" \
-       -Dmd.additional.class.path="$MAGICDRAW_HOME/plugins/org.openehr.bmm.magicdraw/UmlBmmExporter.jar"  \
-       com.nomagic.osgi.launcher.ProductionFrameworkLauncher $@
+       -Dmd.additional.class.path="$MAGICDRAW_HOME/plugins/org.openehr.adoc.magicdraw/UmlAdocExporter.jar"  \
+       com.nomagic.osgi.launcher.ProductionFrameworkLauncher "$@"
