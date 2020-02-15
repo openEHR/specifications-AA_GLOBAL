@@ -207,8 +207,8 @@
 // web pages
 :openehr_sec: {openehr_website_url}/programs/specification/editorialcommittee 
 :openehr_gehr: {openehr_website_url}/resources/related_projects#gehr
-:openehr_technical_list: http://lists.openehr.org/mailman/listinfo/openehr-technical_lists.openehr.org
-:openehr_clinical_list: http://lists.openehr.org/mailman/listinfo/openehr-clinical_lists.openehr.org
+:openehr_technical_list: {openehr_forums_site}/c/specifications
+:openehr_clinical_list: {openehr_forums_site}/c/clinical
 :openehr_CKM: {openehr_website_url}/ckm
 :modelling_tools: {openehr_website_url}/downloads/modellingtools
 :template_Designer: {openehr_website_url}/downloads/modellingtools
