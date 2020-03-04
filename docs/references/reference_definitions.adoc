@@ -77,7 +77,6 @@
 :openehr_bmm: {openehr_lang_releases}/bmm.html
 :openehr_bmm_persistence: {openehr_lang_releases}/bmm_persistence.html
 :openehr_expression_language: {openehr_lang_releases}/expression_language.html
-:openehr_decision_language: {openehr_lang_releases}/decision_language.html
 
 // for link in preface part of docs
 :openehr_lang_latest: {openehr_specs}/releases/LANG/latest
@@ -117,6 +116,8 @@
 :openehr_proc_latest_task_planning: {openehr_proc_latest}/task_planning.html
 :openehr_proc_latest_tp_vml: {openehr_proc_latest}/tp_vml.html
 :openehr_proc_latest_tp_examples: {openehr_proc_latest}/tp_examples.html
+
+:openehr_decision_language: {openehr_proc_releases}/decision_language.html
 
 // --------------- RM ----------------
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
@@ -255,7 +256,7 @@
 :who_icpc: http://www.who.int/classifications/icd/adaptations/icpc2/en/
 :ucum: http://unitsofmeasure.org/ucum.html
 :nlm_umls_list: https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html
-:loc_lang_codes: http://www.loc.gov/standards/iso639-2/langhome.html 
+:loc_lang_codes: http://www.loc.gov/standards/iso639-2/langhome.html
 
 //
 // IEEE
@@ -278,6 +279,7 @@
 :hl7v3_rim: {hl7}/implement/standards/rim.cfm
 :hl7v3_arden: {hl7}/special/Committees/arden/index.cfm
 :hl7v3_gello: {hl7}/implement/standards/product_brief.cfm?product_id=5
+:hl7_cql: https://cql.hl7.org
 :hl7_cimi: https://cimi.hl7.org/index.html
 
 //
