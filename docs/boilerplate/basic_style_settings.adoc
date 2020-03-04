@@ -6,6 +6,7 @@
 :source-highlighter: pygments
 :pygments-style: murphy
 :pagenums:
+:linkattrs:
 // get rid of PDF 'Chapter' labs on level 1 headings
 :chapter-label:
 // HTML specific
