@@ -7,6 +7,7 @@
 
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
+:openehr_forums_site: https://forums.openehr.org
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_software_program: {openehr_website_url}/programs/software
 :openehr_git: https://github.com/openEHR
