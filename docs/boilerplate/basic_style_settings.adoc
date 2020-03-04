@@ -1,0 +1,13 @@
+//
+// Basic asciidoctor style common to all pages.
+//
+
+:doctype: book
+:source-highlighter: pygments
+:pygments-style: murphy
+:pagenums:
+// get rid of PDF 'Chapter' labs on level 1 headings
+:chapter-label:
+// HTML specific
+:linkcss:
+:sectanchors:

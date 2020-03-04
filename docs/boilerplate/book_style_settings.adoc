@@ -3,18 +3,14 @@
 // The file global_vars.adoc must be included BEFORE this one in any master doc.
 //
 
-:doctype: book
-:source-highlighter: pygments
-:pygments-style: murphy
+include::basic_style_settings.adoc[]
+
 :toc: left
 :toclevels: 4
-:pagenums:
 :sectnums!:
 :sectnumlevels: 4
 :chapter-refsig: Section
 :xrefstyle: short
-// get rid of PDF 'Chapter' labs on level 1 headings
-:chapter-label:
 
 // ==== asciidoctor-bibtex settings
 // Location of .bib file is given on command line
