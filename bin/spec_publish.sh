@@ -318,13 +318,17 @@ for component_dir in ${component_list[@]}; do
 		fi
 
 		# if UML source newer than UML docs or no UML docs, regenerate
-		uml_regen_cmd=do_uml_generate-spec-$component.sh
+		uml_file="computable/UML/openEHR_UML-$component.mdzip"
+		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i {${component,,}_release} -r $component -o docs/UML $uml_file"
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
-			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_regen_cmd \
+			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
 		]]; then
+			rm -f docs/UML/classes/*.*
+			rm -f docs/UML/diagrams/*.*
+
 			echo "$uml_regen_cmd"
-			source $uml_regen_cmd
+			eval $uml_regen_cmd
 
 			# regenerate timestamp of the generated UML docs dir
 			ts_uml_docs=`find $uml_gen_dir -name '*.adoc' -printf "%T@\n" | sort | tail -1`
