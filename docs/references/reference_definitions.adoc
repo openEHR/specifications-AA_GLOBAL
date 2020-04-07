@@ -91,6 +91,8 @@
 :openehr_sm_uml_diagrams: {openehr_sm_releases}/UML/diagrams
 
 :openehr_sm_openehr_platform: {openehr_sm_releases}/openehr_platform.html
+:openehr_simplified_im_b: {openehr_sm_releases}/simplified_im_b.html
+:openehr_serial_data_formats: {openehr_sm_releases}/serial_data_formats.html
 
 // for link in preface part of docs
 :openehr_sm_latest: {openehr_specs}/releases/SM/latest
@@ -190,7 +192,7 @@
 :openehr_definitions_rest_api: {openehr_its_rest_releases}/definitions.html
 :openehr_demographic_rest_api: {openehr_its_rest_releases}/demographic.html
 
-:openehr_json_commit_formats: {openehr_its_rest_releases}/json_commit_formats.html
+:openehr_simplified_data_template: {openehr_its_rest_releases}/simplified_data_template.html
 
 // Github
 :openehr_its: {openehr_git}/specifications-ITS
@@ -227,14 +229,14 @@
 :eomf_bmm: https://github.com/wolandscat/EOMF/tree/master/library/bmm
 
 // GDL
-:gdl_lang_site: https://gdl-lang.org/
+:gdl_lang_site: https://gdl-lang.org
 :gdl2_migration_tutorial: {gdl_lang_site}/the-project/guides-tutorials/gdl2-guideline-migration-tutorial
 :gdl_github: https://github.com/gdl-lang
 :gdl_models_github: {gdl_github}/common-clinical-models/tree/master/gdl2
 :gdl_wiki: {gdl_github}/common-clinical-models/wiki
 
 // IANA
-:iana: http://www.iana.org/
+:iana: http://www.iana.org
 :iana_character_sets: {iana}/assignments/character-sets
 :iana_media_types: {iana}/assignments/media-types/text
 
@@ -294,7 +296,7 @@
 //
 // OMG
 //
-:omg: https://www.omg.org/
+:omg: https://www.omg.org
 :omg_bpmn: http://www.bpmn.org/
 :omg_idl: {omg}/spec/IDL/
 :omg_cmmn: {omg}/spec/CMMN/1.0/
@@ -323,7 +325,7 @@
 //
 // Wikipedia
 //
-:wikipedia: https://en.wikipedia.org/wiki/
+:wikipedia: https://en.wikipedia.org/wiki
 :wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
 :wikipedia_currying: {wikipedia}/Currying 
 :wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
@@ -337,7 +339,7 @@
 // ISO
 //
 :iso: https://www.iso.org
-:iso_8601_official: https://www.iso.org/iso-8601-date-and-time-format.html
+:iso_8601_official: {iso}/iso-8601-date-and-time-format.html
 :iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
 :iso_8601: {wikipedia}/ISO_8601
 :iso_rm_odp: {wikipedia}/RM-ODP
@@ -363,9 +365,9 @@
 //
 // Apache
 //
-:apache_kafka: https://kafka.apache.org/
-:apache_avro: https://avro.apache.org/
-:apache_thrift: https://thrift.apache.org/
+:apache_kafka: https://kafka.apache.org
+:apache_avro: https://avro.apache.org
+:apache_thrift: https://thrift.apache.org
 
 //
 // general IT
