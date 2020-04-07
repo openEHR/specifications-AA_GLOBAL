@@ -1,0 +1,47 @@
+{
+    "name": "<component id string, e.g. RM>",
+    "title": "<formal component name, e.g. Reference Model>",
+    "description": "<description of component>",
+    "keywords": "<keywords applying to overall component>",
+    "group": "<component group, as per block diagram>",
+    "jira": {
+        "open_issues": "11106",
+		"releases": [
+			{
+				"id": "1.0.0",
+				"jira_refs":  {
+					"crs": "SPECPROC/versions/12500",
+					"prs": "SPECPR/versions/12501"
+				}
+			},
+			{
+				"id": "1.5.0", 
+				"jira_refs": {
+					"crs": "SPECPROC/versions/12505",
+					"prs": "SPECPR/versions/12536"
+				}
+			}
+		]
+    },
+    "specifications": [
+        {
+            "name": "<identifier string, e.g. task_planning>",
+            "title": "<title coming below opeEHR logo on front page, e.g. Task Planning (TP) Specification>",
+            "title_short": "<title used in home page box for this spec, e.g. Task Planning (TP)>",
+            "description": "<usually same as title but with 'openEHR' prepended; used for hover on web pages, tab titles in browswers etc, e.g. openEHR Task Planning specification>",
+            "summary": "<used in right-hand column of component index page for this spec, e.g. An adaptive, executable, team-based model of workflow.>",
+			"copyright_year": "<initial copright ear, e.g. 2017>",
+			"spec_status": "<spec status, i.e. DEVELOPMENT | TRIAL | STABLE | SUPERSEDED | OBSOLETE | ARCHIVED>",
+			"keywords": "<keywords for this spec, should affect search engines>"
+        }
+    ],
+    "expressions": {
+	    "uml": {
+		    "primary": "openEHR_UML-PROC.mdzip",
+		    "dependencies": [
+				"openEHR_UML-Base.mdzip",
+				"openEHR_UML-RM.mdzip"
+		    ]
+		}
+	}
+}
