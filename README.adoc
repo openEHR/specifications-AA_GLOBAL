@@ -16,7 +16,7 @@ Secondly you may need MagicDraw, since UML diagrams and definitions are extracte
 
 Installing MagicDraw is relatively painless on Linux, despite not being PPA-managed. https://docs.nomagic.com/display/NMDOC/Installing+modeling+tools#Installingmodelingtools-InstallingonUnix[instructions^]).
 
-If you installed MagicDraw, you will also need to install the openEHR https://github.com/openEHR/UML-adoc-exporter[UML extractor plugin^].
+If you installed MagicDraw, you will also need to install the openEHR https://git/do_umlhub.com/openEHR/UML-adoc-exporter[UML extractor plugin^].
 
 === Git repo setup
 
