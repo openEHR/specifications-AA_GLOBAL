@@ -113,14 +113,16 @@
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 :openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
 :openehr_tp_examples: {openehr_proc_releases}/tp_examples.html
+:openehr_decision_language: {openehr_proc_releases}/decision_language.html
+:openehr_subject_proxy: {openehr_proc_releases}/subject_proxy.html
 
 // for link in preface part of docs
 :openehr_proc_latest: {openehr_specs}/releases/PROC/latest
 :openehr_proc_latest_task_planning: {openehr_proc_latest}/task_planning.html
 :openehr_proc_latest_tp_vml: {openehr_proc_latest}/tp_vml.html
 :openehr_proc_latest_tp_examples: {openehr_proc_latest}/tp_examples.html
-
-:openehr_decision_language: {openehr_proc_releases}/decision_language.html
+:openehr_proc_latest_decision_language: {openehr_proc_latest}/decision_language.html
+:openehr_proc_latest_subject_proxy: {openehr_proc_latest}/subject_proxy.html
 
 // --------------- RM ----------------
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
