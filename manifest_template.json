@@ -39,13 +39,13 @@
     "expressions": [
 	    {
 			"id": "<unique id, usually the file name, e.g. 'openEHR_UML-PROC.mdzip'>",
-			"type": "<expression type, i.e uml | dependency | file; remark: type dependency will require the 'dependency' to be filled in, instead of title and description>",
-		    "title": "<expression title, e.g. 'PROC UML'; remark: dependent uml title will be fetched from dependent component>",
-		    "description": "<expression description, e.g. 'MagicDraw 18.5 UML file for PROC 1.0'; remark: dependent uml description will be fetched from dependent component>",
+			"type": "<expression type, i.e uml | file | url; remark: dependent type will be fetched>",
+		    "title": "<expression title, e.g. 'PROC UML'; remark: dependent title will be fetched>",
+		    "description": "<expression description, e.g. 'MagicDraw 18.5 UML file for PROC 1.0'; remark: dependent description will be fetched>",
+			"link": "<expression url link, only for expressions that not part of a component repository, i.e. a webpage or a wikipage link; remark: dependent link will be fetched>",
 			"dependency": {
-				"component": "<component id (name), e.g. 'BASE'>",
-				"release": "<release id (e.g. '1.1.0') or 'latest'>",
-				"expression": "<dependent expression id, e.g. 'openEHR_UML-BASE.mdzip'>"
+				"component": "<component id (name), e.g. 'BASE'; remark: if 'dependency' is filled in, the type, title, link and description will be imported from target>",
+				"release": "<release id (e.g. '1.1.0') or 'latest'>"
 			}
 		}
 	]
