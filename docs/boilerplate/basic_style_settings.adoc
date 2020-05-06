@@ -4,7 +4,7 @@
 
 :doctype: book
 :source-highlighter: pygments
-:pygments-style: murphy
+:pygments-style: default
 :pagenums:
 :linkattrs:
 // get rid of PDF 'Chapter' labs on level 1 headings
