@@ -6,7 +6,7 @@
     "group": "<component group, as per block diagram; remark: not used yet>",
     "jira": {
         "open_issues": "<jira filter id for openissues, i.e '11106'>",
-        "roadmap": "<jira project name, used in the roadmap url, e.g. 'SPECPROC'>",
+        "roadmap": "<jira project name, used in the roadmap url, e.g. 'SPECPROC'>"
     },
 	"releases": [
 		{
@@ -17,7 +17,7 @@
 				"prs": "<problem report project's version id, e.g. 'SPECPR/versions/12501'>"
 			}
 		}
-	]
+	],
     "specifications": [
         {
             "id": "<identifier string, e.g. task_planning>",
@@ -25,6 +25,8 @@
             "title_short": "<title used in home page box for this spec, e.g. Task Planning (TP)>",
             "description": "<usually same as title but with 'openEHR' prepended; used for hover on web pages, tab titles in browsers etc, e.g. openEHR Task Planning specification>",
             "summary": "<used in right-hand column of component index page for this spec, e.g. An adaptive, executable, team-based model of workflow>",
+            "micro_summary": "<used as text in home page box for this spec; usually a shortened version of summary; may be empty.>",
+			"classes": "<optional list of key classes to add under micro-summary; each class would be linked to spec source location>",
 			"copyright_year": "<initial copyright ear, e.g. 2017>",
 			"spec_status": "<spec status, i.e. DEVELOPMENT | TRIAL | STABLE | SUPERSEDED | OBSOLETE | ARCHIVED>",
 			"keywords": "<keywords for this spec, should affect search engines>",
