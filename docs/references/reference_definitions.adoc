@@ -158,6 +158,7 @@
 :openehr_cnf_component: {openehr_cnf_releases}/index
 
 :openehr_cnf_openehr_platform: {openehr_cnf_releases}/openehr_platform_conformance.html
+:openehr_cnf_scripts_dir: {openehr_cnf_releases}/scripts/openehr_platform
 
 // for link in preface part of docs
 :openehr_cnf_latest: {openehr_specs}/releases/CNF/latest
