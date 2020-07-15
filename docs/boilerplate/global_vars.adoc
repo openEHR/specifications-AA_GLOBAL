@@ -7,11 +7,12 @@
 
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
-:openehr_forums_site: https://forums.openehr.org
+:openehr_forums_site: https://discourse.openehr.org
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_software_program: {openehr_website_url}/programs/software
 :openehr_git: https://github.com/openEHR
 :openehr_specs: https://specifications.openehr.org
+:openehr_industry_partners: {openehr_website_url}/community/industry_partners/
 :openehr_logo: {openehr_specs}/images/openEHR_logo_RGB.svg
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 :apache_licence_img: http://apache.org/img/ASF20thAnniversary.jpg
@@ -23,7 +24,11 @@
 :uml_diagrams_uri: UML/diagrams
 :uml_aom14_diagrams_uri: UML/AOM1.4/diagrams
 
-// diagrams & images URIs
+// diagrams & images URIs in docs/common
+:common_diagrams_uri: common/diagrams
+:common_images_uri: common/images
+
+// diagrams & images URIs in current document
 :diagrams_uri: {doc_name}/diagrams
 :images_uri: {doc_name}/images
 
