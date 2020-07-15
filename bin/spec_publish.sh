@@ -159,6 +159,9 @@ index_doc_name=index.adoc
 global_ref_repo=AA_GLOBAL
 uml_gen_dir=docs/UML/classes
 
+manifest_file=manifest.json
+manifest_vars_file=manifest_vars.adoc
+
 # relative location of UML directory under any specifications-XX directory
 uml_source_dir=computable/UML
 
@@ -335,6 +338,45 @@ for component_dir in ${component_list[@]}; do
 		fi
 	fi
 
+	#
+	# process the manifest file to generate a manifest_vars.adoc file in each
+	# docs/<doc> directory
+	#
+	if [ -f $manifest_file ]; then
+		echo "    ---- processing $manifest_file ----"
+
+		#
+		# extract a string of the form:
+		#
+		# :id: task_planning
+		# :spec_title: Task Planning (TP) Specification
+		# :copyright_year: 2017
+		# :spec_status: TRIAL
+		# :keywords: workflow, task, planning, EHR, EMR, reference model, openehr
+		# :description: openEHR Task Planning specification
+		# :id: tp_vml
+		# :spec_title: Task Planning Visual Modelling Language (TP-VML)
+		# :copyright_year: 2017
+		# :spec_status: TRIAL
+		# :keywords: task planning, visual language, workflow
+		# :description: openEHR Task Planning Visual Modelling Language
+
+		cat $manifest_file  | jq '.specifications[] | 
+			{id: .id, spec_title: .title, copyright_year: .copyright_year, spec_status: .spec_status, keywords: .keywords, description: .description}' | 
+			sed -e '/[{}]/d' -e 's/^  /:/' -e 's/"//g' -e s/,$// | while read line 
+		do
+			if [[ "$line" == ":id:"* ]]; then
+				doc_dir=`echo $line | sed -e 's/:id: //'`
+				out_path=docs/$doc_dir/$manifest_vars_file
+				echo "        -> $out_path"
+				# wipe out if it exists
+				echo -n "" > $out_path
+			else
+				echo $line >> $out_path
+			fi
+		done
+	fi
+
 	# process docs dir
 	if [ -d docs ]; then
 		# do the main documents first
@@ -344,12 +386,14 @@ for component_dir in ${component_list[@]}; do
 			olddir=$(pwd)
 
 			echo -n "    ------------- checking $docdir "
-			# check if target .html file is most recent; if not regenerate
-			ts_src_docs=`find $docdir -printf "%T@\n" | sort | tail -1`
+			# check if target .html file is most recent; if not regenerate (note, we exclude the newly-created manifest file
+			ts_src_docs=`find $docdir ! -name "$manifest_vars_file" -printf "%T@\n" | sort | sed -e /$manifest_vars_file/d | tail -1`
+			ts_main_manifest=`stat -c %Y $manifest_file`
 			ts_out_doc=`stat -c %Y $docdir.html`
 			if [[ "$force_generate" = true || \
 				! -f "$docdir.html" || \
 				$(echo "$ts_src_docs > $ts_out_doc" | bc -l) -eq 1 || \
+				$(echo "$ts_main_manifest > $ts_out_doc" | bc -l) -eq 1 || \
 				$(echo "$ts_uml_docs > $ts_out_doc" | bc -l) -eq 1 \
 			]]; then
 				echo " REBUILD ---------------"
