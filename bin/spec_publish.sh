@@ -164,6 +164,7 @@ manifest_vars_file=manifest_vars.adoc
 
 # relative location of UML directory under any specifications-XX directory
 uml_source_dir=computable/UML
+uml_root_package="openehr"
 
 specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
@@ -322,7 +323,7 @@ for component_dir in ${component_list[@]}; do
 
 		# if UML source newer than UML docs or no UML docs, regenerate
 		uml_file="computable/UML/openEHR_UML-$component.mdzip"
-		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i {${component,,}_release} -r $component -o docs/UML $uml_file"
+		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i {${component,,}_release} -r $uml_root_package -c $component -o docs/UML $uml_file"
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
@@ -366,13 +367,17 @@ for component_dir in ${component_list[@]}; do
 			sed -e '/[{}]/d' -e 's/^  /:/' -e 's/"//g' -e s/,$// | while read line 
 		do
 			if [[ "$line" == ":id:"* ]]; then
-				doc_dir=`echo $line | sed -e 's/:id: //'`
-				out_path=docs/$doc_dir/$manifest_vars_file
-				echo "        -> $out_path"
-				# wipe out if it exists
-				echo -n "" > $out_path
+				doc_name=`echo $line | sed -e 's/:id: //'`
+				doc_dir=docs/$doc_name
+				out_path=$doc_dir/$manifest_vars_file
+				if [ -d $doc_dir ]; then
+					echo "    writing $out_path"
+					echo -n > $out_path
+				fi
 			else
-				echo $line >> $out_path
+				if [ -d $doc_dir ]; then
+					echo $line >> $out_path
+				fi
 			fi
 		done
 	fi
