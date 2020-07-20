@@ -17,6 +17,9 @@
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
 :apache_licence_img: http://apache.org/img/ASF20thAnniversary.jpg
 
+// URL for specifications site to find a class
+:classes_url_root: /classes
+
 // UML relative directory for .adoc includes
 :uml_export_dir: ../UML
 
