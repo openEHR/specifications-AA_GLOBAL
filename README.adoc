@@ -56,7 +56,13 @@ To do a release of a component, e.g. 'RM Release-1.0,4', the following steps are
 
 === Jira
 
-When all the work specified by the CRs in the component project (e.g. SPECRM) in Jira is done, resolve and close all Jira CRs and PRs. You can now create the relevant saved searches for the PRs and the CRs for this release in Jira, which will have URLs of the form `<jira-home>/projects/SPECPR/versions/NNNNN` and `<jira-home>/projects/SPECR/versions/NNNNN` respectively. These are mapped in the site Apache settings as the targets of the logical URLs `/components/<COMPONENT>/Release-N.N.N/issues` and `/components/<COMPONENT>/Release-N.N.N/changes` respectively, e.g. as follows. Ask the openEHR sysadmin to add these to the rules for the `specifications.openEHR.org` site. The logical links will be generated in the specifications documentation (including the `docs/index.html`) file by the publishing process.
+When all the work specified by the CRs in the component project (e.g. SPECRM) in Jira is done, resolve and close all Jira CRs and PRs. You can now create the relevant saved searches for the PRs and the CRs for this release in Jira, which will have URLs of the form `<jira-home>/projects/SPECPR/versions/NNNNN` and `<jira-home>/projects/SPECR/versions/NNNNN` respectively. 
+
+=== Apache
+
+[ obsolete with new PHP website based on manifest.json]
+
+The above URLs are mapped in the specifications site Apache settings as the targets of the logical URLs `/components/<COMPONENT>/Release-N.N.N/issues` and `/components/<COMPONENT>/Release-N.N.N/changes` respectively, e.g. as follows. Ask the openEHR sysadmin to add these to the rules for the `specifications.openEHR.org` site. The logical links will be generated in the specifications documentation (including the `docs/index.html`) file by the publishing process.
 
 ----
 RewriteRule    ^/components/RM/Release-1.0.4/issues$      https://openehr.atlassian.net/projects/SPECPR/versions/10861    [R,L]
