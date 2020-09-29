@@ -110,6 +110,7 @@
 // --------------- PROC ----------------
 :openehr_proc_releases: {openehr_specs}/releases/PROC/{proc_release}
 
+:openehr_proc_overview: {openehr_proc_releases}/overview.html
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 :openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
 :openehr_tp_examples: {openehr_proc_releases}/tp_examples.html
@@ -123,6 +124,7 @@
 :openehr_proc_latest_tp_examples: {openehr_proc_latest}/tp_examples.html
 :openehr_proc_latest_decision_language: {openehr_proc_latest}/decision_language.html
 :openehr_proc_latest_subject_proxy: {openehr_proc_latest}/subject_proxy.html
+:openehr_proc_latest_overview: {openehr_proc_latest}/overview.html
 
 // --------------- RM ----------------
 :openehr_rm_releases: {openehr_specs}/releases/RM/{rm_release}
@@ -273,7 +275,8 @@
 // HL7
 //
 :hl7: https://www.hl7.org
-:hl7_fhir: {hl7}/fhir/
+:hl7_fhir: {hl7}/fhir
+:hl7_fhir_binding_strengths: {hl7_fhir}/terminologies.html#strength
 :hl7_compression_algorithms: {hl7_fhir}/v3/CompressionAlgorithm/cs.html
 :hl7_integrity_check_algorithms: {hl7_fhir}/v3/IntegrityCheckAlgorithm/cs.html
 :hl7_observation_statuses: {hl7_fhir}/valueset-observation-interpretation.html
@@ -341,6 +344,7 @@
 :wikipedia_seven_plus_or_minus_two: {wikipedia}/The_Magical_Number_Seven,_Plus_or_Minus_Two
 :soap_protocol: {wikipedia}/SOAP
 :rest_ws: {wikipedia}/Representational_state_transfer
+:cqs: {wikipedia}/Command%E2%80%93query_separation
 
 //
 // ISO
@@ -393,3 +397,5 @@
 :winmerge: http://winmerge.org/
 :json: http://json.org
 :graphql: http://graphql.org
+:kotlin: https://kotlinlang.org
+

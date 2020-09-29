@@ -5,13 +5,16 @@
 :apache_licence_text: Apache 2.0 Licence.
 :apache_licence_url: http://apache.org/licenses/LICENSE-2.0.html
 
+// sites
 :openehr_domain: www.openehr.org
 :openehr_website_url: https://www.openehr.org
 :openehr_forums_site: https://discourse.openehr.org
+:openehr_specs: https://specifications.openehr.org
+:openehr_git: https://github.com/openEHR
+
+:openehr_sec: {openehr_website_url}/programs/specification/editorialcommittee
 :openehr_specification_program: {openehr_website_url}/programs/specification
 :openehr_software_program: {openehr_website_url}/programs/software
-:openehr_git: https://github.com/openEHR
-:openehr_specs: https://specifications.openehr.org
 :openehr_industry_partners: {openehr_website_url}/community/industry_partners/
 :openehr_logo: {openehr_specs}/images/openEHR_logo_RGB.svg
 :cc_licence_img: {openehr_specs}/images/cc-by-nd-88x31.png
@@ -30,15 +33,20 @@
 // diagrams & images URIs in docs/common
 :common_diagrams_uri: common/diagrams
 :common_images_uri: common/images
+:overview_diagrams_uri: overview/diagrams
+:overview_images_uri: overview/images
 
 // diagrams & images URIs in current document
 :diagrams_uri: {doc_name}/diagrams
 :images_uri: {doc_name}/images
 
-// mailing lists
-:openehr_mailing_lists: {openehr_website_url}/digital_media/mailinglists/
-:openehr_technical_mailing_list: {openehr_mailing_lists}/openehr-technical
-:openehr_clinical_mailing_list: {openehr_mailing_lists}/openehr-clinical
+// discussion forums
+:openehr_mailing_lists: {openehr_forums_site}
+:openehr_technical_mailing_list: {openehr_forums_site}/c/specifications
+:openehr_clinical_mailing_list: {openehr_forums_site}/c/clinical
+:openehr_process_forum: {openehr_forums_site}/c/specifications/task-planning-gdl
+:openehr_lang_forum: {openehr_forums_site}/c/specifications/bmm-el
+:openehr_rm_forum: {openehr_forums_site}/c/specifications/rm
 
 //
 // openEHR Wiki URLs
