@@ -323,7 +323,7 @@ for component_dir in ${component_list[@]}; do
 
 		# if UML source newer than UML docs or no UML docs, regenerate
 		uml_file="computable/UML/openEHR_UML-$component.mdzip"
-		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i {${component,,}_release} -r $uml_root_package -c $component -o docs/UML $uml_file"
+		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i "{%s_release}" -r $uml_root_package -c $component -o docs/UML $uml_file"
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
