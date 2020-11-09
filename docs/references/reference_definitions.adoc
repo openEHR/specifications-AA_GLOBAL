@@ -102,10 +102,12 @@
 // --------------- QUERY ----------------
 :openehr_query_releases: {openehr_specs}/releases/QUERY/{query_release}
 :openehr_query_aql: {openehr_query_releases}/AQL.html
+:openehr_query_aql_examples: {openehr_query_releases}/AQL_examples.html
 
 // for link in preface part of docs
 :openehr_query_latest: {openehr_specs}/releases/QUERY/latest
 :openehr_query_latest_aql: {openehr_query_latest}/AQL.html
+:openehr_query_latest_aql_examples: {openehr_query_latest}/AQL_examples.html
 
 // --------------- PROC ----------------
 :openehr_proc_releases: {openehr_specs}/releases/PROC/{proc_release}
