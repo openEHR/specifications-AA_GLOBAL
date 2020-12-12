@@ -49,6 +49,7 @@
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 :openehr_path_syntax: {openehr_overview}#_paths_and_locators
+:openehr_path_syntax_predicates: {openehr_overview}#_predicate_expressions
 
 :openehr_base_uml_diagrams: {openehr_base_releases}/UML/diagrams
 :openehr_base_release_102: {openehr_specs}/releases/BASE/Release-1.0.2
@@ -325,12 +326,13 @@
 // IETF
 //
 :ietf: https://www.ietf.org
-:rfc2396: {ietf}/rfc/rfc2396
-:rfc4880: {ietf}/rfc/rfc4880
-:rfc3986: {ietf}/rfc/rfc3986
-:rfc4122: {ietf}/rfc/rfc4122
-:rfc2781: {ietf}/html/rfc2781
-:rfc5646: https://tools.ietf.org/html/rfc5646
+:ietf_html: https://tools.ietf.org/html
+:rfc2396: {ietf_html}/rfc2396
+:rfc4880: {ietf_html}/rfc4880
+:rfc3986: {ietf_html}/rfc3986
+:rfc4122: {ietf_html}/rfc4122
+:rfc2781: {ietf_html}/rfc2781
+:rfc5646: {ietf_html}/rfc5646
 
 //
 // Wikipedia
