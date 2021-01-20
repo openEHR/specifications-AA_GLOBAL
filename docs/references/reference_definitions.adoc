@@ -61,6 +61,10 @@
 :openehr_base_latest_resource: {openehr_base_latest}/resource.html
 :openehr_base_latest_overview: {openehr_base_latest}/architecture_overview.html
 
+// For legacy referencing from AM Release-2.1.0, AM Release-2.2.1
+:openehr_base_release_104: {openehr_specs}/releases/BASE/Release-1.0.4
+:openehr_expression: {openehr_base_release_104}/expression.html
+
 // --------------- CDS ----------------
 :openehr_cds_releases: {openehr_specs}/releases/CDS/{cds_release}
 
