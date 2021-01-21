@@ -213,6 +213,7 @@
 :openehr_its_rm_xsds: {openehr_its}/tree/master/components/RM
 :openehr_its_rest: {openehr_git}/specifications-ITS-REST
 :openehr_rest_apis: {openehr_git}/specifications-ITS-REST
+:openehr_adl_antlr: {openehr_git}/adl-antlr
 
 //
 // ============== openEHR online resources ==============
