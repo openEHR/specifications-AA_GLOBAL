@@ -120,17 +120,15 @@
 :openehr_proc_overview: {openehr_proc_releases}/overview.html
 :openehr_task_planning: {openehr_proc_releases}/task_planning.html
 :openehr_tp_vml: {openehr_proc_releases}/tp_vml.html
-:openehr_tp_examples: {openehr_proc_releases}/tp_examples.html
+:openehr_process_examples: {openehr_proc_releases}/process_examples.html
 :openehr_decision_language: {openehr_proc_releases}/decision_language.html
-:openehr_subject_proxy: {openehr_proc_releases}/subject_proxy.html
 
 // for link in preface part of docs
 :openehr_proc_latest: {openehr_specs}/releases/PROC/latest
 :openehr_proc_latest_task_planning: {openehr_proc_latest}/task_planning.html
 :openehr_proc_latest_tp_vml: {openehr_proc_latest}/tp_vml.html
-:openehr_proc_latest_tp_examples: {openehr_proc_latest}/tp_examples.html
+:openehr_proc_latest_process_examples: {openehr_proc_latest}/process_examples.html
 :openehr_proc_latest_decision_language: {openehr_proc_latest}/decision_language.html
-:openehr_proc_latest_subject_proxy: {openehr_proc_latest}/subject_proxy.html
 :openehr_proc_latest_overview: {openehr_proc_latest}/overview.html
 
 // --------------- RM ----------------
@@ -245,13 +243,18 @@
 :gdl_lang_site: https://gdl-lang.org
 :gdl2_migration_tutorial: {gdl_lang_site}/the-project/guides-tutorials/gdl2-guideline-migration-tutorial
 :gdl_github: https://github.com/gdl-lang
-:gdl_models_github: {gdl_github}/common-clinical-models/tree/master/gdl2
+:gdl_models_github: {gdl_github}/common-clinical-models/blob/master/README.md
 :gdl_wiki: {gdl_github}/common-clinical-models/wiki
 
 // IANA
 :iana: http://www.iana.org
 :iana_character_sets: {iana}/assignments/character-sets
 :iana_media_types: {iana}/assignments/media-types/text
+
+//
+// =============== major online reference sites ===============
+//
+:wikipedia: https://en.wikipedia.org/wiki
 
 //
 // =============== e-Health online resources ===============
@@ -272,6 +275,27 @@
 :ucum: http://unitsofmeasure.org/ucum.html
 :nlm_umls_list: https://www.nlm.nih.gov/research/umls/sourcereleasedocs/index.html
 :loc_lang_codes: http://www.loc.gov/standards/iso639-2/langhome.html
+:proforma_language: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC212780/
+:guidelines_intl_network: https://g-i-n.net/
+:cds_hooks: https://cds-hooks.org
+
+//
+// =============== clinical online resources ===============
+//
+:e_p_a: http://e-p-a.org
+:e_p_a_care_pathways: {e_p_a}/care-pathways/
+:cemb_oxford: https://www.cebm.ox.ac.uk/resources/ebm-tools/glossary
+:nice_uk: https://www.nice.org.uk
+:nice_uk_pathways: https://pathways.nice.org.uk/pathways
+:nice_uk_stable_angina: https://www.nice.org.uk/guidance/CG126
+:cancer_council_australia: https://www.cancer.org.au
+:cancer_council_australia_breast: {cancer_council_australia}/assets/pdf/breast-cancer-optimal-cancer-care-pathway
+:ihc_stroke_pathway: https://intermountainhealthcare.org/ckr-ext/Dcmnt?ncid=520500199
+:acep_covid_19_severity_tool_pdf: https://www.acep.org/globalassets/sites/acep/media/covid-19-main/acep_evidencecare_covid19severitytool.pdf
+:acep_covid_19_severity_tool_app: https://covid19.evidence.care/dashboard/covid/pathway/198712647/-980102880
+:rn_central_care_plan: http://www.rncentral.com/nursing-library/careplans/
+:chad2ds2vasc_score: {wikipedia}/CHA2DS2-VASc_score
+:wikipedia_tnm: {wikipedia}/TNM_staging_system
 
 //
 // IEEE
@@ -322,6 +346,7 @@
 :omg_lqs: {omg}/spec/LQS/
 :omg_coas: {omg}/spec/COAS/
 :omg_corbamed: {omg}/spec/COAS/
+:bpm_plus: http://bpm-plus.org/
 
 // Unicode
 :unicode_countries_list: http://www.unicode.org/unicode/onlinedat/countries.html
@@ -341,14 +366,12 @@
 //
 // Wikipedia
 //
-:wikipedia: https://en.wikipedia.org/wiki
 :wikipedia_open_world_assumption: {wikipedia}/Open-world_assumption 
 :wikipedia_currying: {wikipedia}/Currying
 :wikipedia_sql: {wikipedia}/SQL
 :wikipedia_oql: {wikipedia}/Object_Query_Language
 :wikipedia_lambda_calculus: {wikipedia}/Lambda_calculus 
 :wikipedia_cov_contra: {wikipedia}/Covariance_and_contravariance_(computer_science) 
-:wikipedia_tnm: {wikipedia}/TNM_staging_system
 :wikipedia_seven_plus_or_minus_two: {wikipedia}/The_Magical_Number_Seven,_Plus_or_Minus_Two
 :soap_protocol: {wikipedia}/SOAP
 :rest_ws: {wikipedia}/Representational_state_transfer

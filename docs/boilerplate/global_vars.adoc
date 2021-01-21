@@ -47,6 +47,8 @@
 :openehr_process_forum: {openehr_forums_site}/c/specifications/task-planning-gdl
 :openehr_lang_forum: {openehr_forums_site}/c/specifications/bmm-el
 :openehr_rm_forum: {openehr_forums_site}/c/specifications/rm
+:openehr_adl_forum: {openehr_forums_site}/c/specifications/adl
+:openehr_aql_forum: {openehr_forums_site}/c/specifications/aql
 
 //
 // openEHR Wiki URLs
