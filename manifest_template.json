@@ -27,7 +27,7 @@
             "summary": "<used in right-hand column of component index page for this spec, e.g. An adaptive, executable, team-based model of workflow>",
             "micro_summary": "<used as text in home page box for this spec; usually a shortened version of summary; may be empty.>",
 			"classes": "<optional list of key classes to add under micro-summary; each class would be linked to spec source location>",
-			"copyright_year": "<initial copyright ear, e.g. 2017>",
+			"copyright_year": "<initial copyright year, e.g. 2017>",
 			"spec_status": "<spec status, i.e. DEVELOPMENT | TRIAL | STABLE | SUPERSEDED | OBSOLETE | ARCHIVED>",
 			"keywords": "<keywords for this spec, should affect search engines>",
 			"notes": [
