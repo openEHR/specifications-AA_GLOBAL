@@ -10,8 +10,8 @@
 :openehr_rm_102_data_types: {openehr_release_102_pdf}/rm/data_types_im.pdf
 :openehr_rm_102_support: {openehr_release_102_pdf}/rm/support_im.pdf
 
-:openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl1.4.pdf
-:openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom1.4.pdf
+:openehr_am_adl14_pdf: {openehr_release_102_pdf}/am/adl.pdf
+:openehr_am_aom14_pdf: {openehr_release_102_pdf}/am/aom.pdf
 
 :openehr_am_def_pri: {openehr_release_102_pdf}/am/archetype_principles.pdf
 :openehr_am_arch_sys: {openehr_release_102_pdf}/am/archetype_system.pdf
@@ -190,13 +190,11 @@
 :openehr_its_component: {openehr_its_releases}/index
 // for now, ITS-REST has its own docs index, but the other 3 do not
 :openehr_its_rest_releases: {openehr_specs}/releases/ITS-REST/{its_rest_release}
-:openehr_its_xml_releases: {openehr_its_releases}
-:openehr_its_json_releases: {openehr_its_releases}
-:openehr_its_bmm_releases: {openehr_its_releases}
-//:openehr_its_xml_releases: {openehr_specs}/releases/ITS-XML/{its_xml_release}
-//:openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
-//:openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
+:openehr_its_xml_releases: {openehr_specs}/releases/ITS-XML/{its_xml_release}
+:openehr_its_json_releases: {openehr_specs}/releases/ITS-JSON/{its_json_release}
+:openehr_its_bmm_releases: {openehr_specs}/releases/ITS-BMM/{its_bmm_release}
 
+// REST APIs
 :openehr_ehr_rest_api: {openehr_its_rest_releases}/ehr.html
 :openehr_query_rest_api: {openehr_its_rest_releases}/query.html
 :openehr_cds_rest_api: {openehr_its_rest_releases}/query.html
@@ -204,6 +202,14 @@
 :openehr_demographic_rest_api: {openehr_its_rest_releases}/demographic.html
 
 :openehr_simplified_data_template: {openehr_its_rest_releases}/simplified_data_template.html
+
+// XML schemas
+:openehr_its_am_xsd: {openehr_its_xml_releases}/components/AM
+:openehr_its_rm_xsd: {openehr_its_xml_releases}/components/RM
+:openehr_its_query_xsd: {openehr_its_xml_releases}/components/QUERY
+:openehr_its_base_xsd: {openehr_its_xml_releases}/components/BASE
+:openehr_its_oet_xsd: {openehr_its_xml_releases}/components/OET
+
 
 // Github
 :openehr_its: {openehr_git}/specifications-ITS
@@ -263,14 +269,15 @@
 :bfo: http://ifomis.uni-saarland.de/bfo/
 :fma: http://sig.biostr.washington.edu/projects/fm/
 :iao:  https://code.google.com/p/information-artifact-ontology/
-:ihtsdo: http://www.ihtsdo.org
+:snomed: http://www.snomed.org
+:ihtsdo: {snomed}
+:snomed_ct: {snomed}
+:snomed_uris: https://confluence.ihtsdotools.org/display/DOCURI/URI+Standard
 :linkehr: http://linkehr.com 
 :loinc: http://loinc.org
 :obo: http://www.obofoundry.org/
 :ogms: https://code.google.com/p/ogms/
 :protege: http://protege.stanford.edu/
-:snomed_ct: http://www.ihtsdo.org
-:snomed_uris: https://confluence.ihtsdotools.org/display/DOCURI/URI+Standard
 :who_icd: http://www.who.int/classifications/icd/en/
 :who_icpc: http://www.who.int/classifications/icd/adaptations/icpc2/en/
 :ucum: http://unitsofmeasure.org/ucum.html
