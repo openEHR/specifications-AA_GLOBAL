@@ -46,6 +46,7 @@
 
 :openehr_base_types: {openehr_base_releases}/base_types.html
 :openehr_foundation_types: {openehr_base_releases}/foundation_types.html
+:openehr_foundation_time_types: {openehr_foundation_types}#_time_types
 :openehr_resource: {openehr_base_releases}/resource.html
 :openehr_overview: {openehr_base_releases}/architecture_overview.html
 :openehr_path_syntax: {openehr_overview}#_paths_and_locators
