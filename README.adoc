@@ -12,9 +12,14 @@ NOTE: in the below, if you are an openEHR SEC member, you may be doing direct cl
 
 Firstly, you need to install asciidoctor. This is generally painless - https://asciidoctor.org[see here^].
 Install also few other required things:
+
  - gems: asciidoctor-bibtex and pygments.rb
  - python
  - jq (and bc)
+
+NOTE: Instead of installing this from scratch it you can also build and use the provided /tools/docker/asciidoctor/Dockerfile of this repo; see also attached README file for more instructions.
+
+NOTE: We currently use version v2.0.10 of asciidoctor.
 
 Secondly you may need MagicDraw, since UML diagrams and definitions are extracted from the UML binary files via MagicDraw. Please contact the openEHR SEC if this is the case.
 
