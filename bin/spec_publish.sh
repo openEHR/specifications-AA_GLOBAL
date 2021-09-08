@@ -68,6 +68,7 @@ run_asciidoctor () {
 		-a stylesheet=$stylesheet \
 		-a release=$release \
 		-a doc_name=${1} \
+		-a allow-uri-read \
 		-a bibtex-file=$ref_dir/docs/references/references.bib"
 
 	# -w missing attribute warnings

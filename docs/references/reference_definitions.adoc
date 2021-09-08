@@ -221,6 +221,7 @@
 :openehr_its_rest: {openehr_git}/specifications-ITS-REST
 :openehr_rest_apis: {openehr_git}/specifications-ITS-REST
 :openehr_adl_antlr: {openehr_git}/adl-antlr
+:openehr_adl_antlr_include: {openehr_git_raw}/adl-antlr/master/src/main/antlr
 
 //
 // ============== openEHR online resources ==============

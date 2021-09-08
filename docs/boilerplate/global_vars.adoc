@@ -11,6 +11,7 @@
 :openehr_forums_site: https://discourse.openehr.org
 :openehr_specs: https://specifications.openehr.org
 :openehr_git: https://github.com/openEHR
+:openehr_git_raw: https://raw.githubusercontent.com/openEHR
 
 :openehr_sec: {openehr_website_url}/programs/specification/editorialcommittee
 :openehr_specification_program: {openehr_website_url}/programs/specification
