@@ -50,6 +50,7 @@
 :openehr_rm_forum: {openehr_forums_site}/c/specifications/rm
 :openehr_adl_forum: {openehr_forums_site}/c/specifications/adl
 :openehr_aql_forum: {openehr_forums_site}/c/specifications/aql
+:openehr_cnf_forum: {openehr_forums_site}/c/implem/conformance
 
 //
 // openEHR Wiki URLs
