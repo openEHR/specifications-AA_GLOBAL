@@ -165,12 +165,17 @@
 :openehr_cnf_releases: {openehr_specs}/releases/CNF/{cnf_release}
 :openehr_cnf_component: {openehr_cnf_releases}/index
 
-:openehr_cnf_openehr_platform: {openehr_cnf_releases}/openehr_platform_conformance.html
-:openehr_cnf_scripts_dir: {openehr_cnf_releases}/scripts/openehr_platform
+:openehr_cnf_platform_test_schedule: {openehr_cnf_releases}/platform_test_schedule.html
+:openehr_cnf_certificate: {openehr_cnf_releases}/certificate.html
+:openehr_cnf_guide: {openehr_cnf_releases}/guide.html
+:openehr_cnf_profiles: {openehr_cnf_releases}/profiles.html
 
 // for link in preface part of docs
 :openehr_cnf_latest: {openehr_specs}/releases/CNF/latest
-:openehr_cnf_latest_openehr_platform: {openehr_cnf_latest}/openehr_platform_conformance.html
+:openehr_cnf_latest_platform_test_schedule: {openehr_cnf_latest}/platform_test_schedule.html
+:openehr_cnf_latest_guide: {openehr_cnf_latest}/guide.html
+:openehr_cnf_latest_certificate: {openehr_cnf_latest}/certificate.html
+:openehr_cnf_latest_profiles: {openehr_cnf_latest}/profiles.html
 
 // --------------- TERM ----------------
 :openehr_term_releases: {openehr_specs}/releases/TERM/{term_release}
@@ -440,4 +445,7 @@
 :json: http://json.org
 :graphql: http://graphql.org
 :kotlin: https://kotlinlang.org
+:cucumber_test: https://cucumber.io
+:robot_test: https://robotframework.org
+:spock_test: https://spockframework.org
 
