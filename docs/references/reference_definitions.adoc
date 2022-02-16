@@ -165,15 +165,18 @@
 :openehr_cnf_releases: {openehr_specs}/releases/CNF/{cnf_release}
 :openehr_cnf_component: {openehr_cnf_releases}/index
 
+:openehr_cnf_guide: {openehr_cnf_releases}/guide.html
 :openehr_cnf_platform_test_schedule: {openehr_cnf_releases}/platform_test_schedule.html
 :openehr_cnf_certificate: {openehr_cnf_releases}/certificate.html
-:openehr_cnf_guide: {openehr_cnf_releases}/guide.html
 :openehr_cnf_profiles: {openehr_cnf_releases}/profiles.html
+
+:openehr_cnf_platform_tests: {openehr_cnf_releases}/tests/platform
+:openehr_cnf_platform_tests_robot: {openehr_cnf_releases}/tests/platform/robot
 
 // for link in preface part of docs
 :openehr_cnf_latest: {openehr_specs}/releases/CNF/latest
-:openehr_cnf_latest_platform_test_schedule: {openehr_cnf_latest}/platform_test_schedule.html
 :openehr_cnf_latest_guide: {openehr_cnf_latest}/guide.html
+:openehr_cnf_latest_platform_test_schedule: {openehr_cnf_latest}/platform_test_schedule.html
 :openehr_cnf_latest_certificate: {openehr_cnf_latest}/certificate.html
 :openehr_cnf_latest_profiles: {openehr_cnf_latest}/profiles.html
 
@@ -227,6 +230,7 @@
 :openehr_rest_apis: {openehr_git}/specifications-ITS-REST
 :openehr_adl_antlr: {openehr_git}/adl-antlr
 :openehr_adl_antlr_include: {openehr_git_raw}/adl-antlr/master/src/main/antlr
+:openehr_adl_210_antlr_include: {openehr_git_raw}/adl-antlr/ADL_2.1.0/src/main/antlr
 :openehr_adl_220_antlr_include: {openehr_git_raw}/adl-antlr/ADL_2.2.0/src/main/antlr
 
 //
