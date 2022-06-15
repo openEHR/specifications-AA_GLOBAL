@@ -83,14 +83,16 @@
 :openehr_odin: {openehr_lang_releases}/odin.html
 :openehr_bmm: {openehr_lang_releases}/bmm.html
 :openehr_bmm_persistence: {openehr_lang_releases}/bmm_persistence.html
-:openehr_expression_language: {openehr_lang_releases}/expression_language.html
+:openehr_basic_expression_language: {openehr_lang_releases}/BEL.html
+:openehr_expression_language: {openehr_lang_releases}/EL.html
 
 // for link in preface part of docs
 :openehr_lang_latest: {openehr_specs}/releases/LANG/latest
 :openehr_lang_latest_odin: {openehr_lang_latest}/odin.html
 :openehr_lang_latest_bmm: {openehr_lang_latest}/bmm.html
 :openehr_lang_latest_bmm_persistence: {openehr_lang_latest}/bmm_persistence.html
-:openehr_lang_latest_expression_language: {openehr_lang_latest}/expression_language.html
+:openehr_lang_latest_basic_expression_language: {openehr_lang_latest}/BEL.html
+:openehr_lang_latest_expression_language: {openehr_lang_latest}/EL.html
 :openehr_lang_latest_decision_language: {openehr_lang_latest}/decision_language.html
 
 // --------------- SM ----------------
@@ -232,6 +234,8 @@
 :openehr_adl_antlr_include: {openehr_git_raw}/adl-antlr/master/src/main/antlr
 :openehr_adl_210_antlr_include: {openehr_git_raw}/adl-antlr/ADL_2.1.0/src/main/antlr
 :openehr_adl_220_antlr_include: {openehr_git_raw}/adl-antlr/ADL_2.2.0/src/main/antlr
+:openehr_openehr_antlr_include: {openehr_git_raw}/openEHR-antlr4/master/combined/src/main/antlr
+:openehr_openehr_antlr: {openehr_git}/openEHR-antlr4/tree/master/combined/src/main/antlr
 
 //
 // ============== openEHR online resources ==============
