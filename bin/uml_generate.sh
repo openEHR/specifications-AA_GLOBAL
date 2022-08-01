@@ -1,5 +1,17 @@
 #!/bin/bash
 
+#
+# Note that the version of java needed in the final invocation of this script is Java8, required
+# MagicDraw19. Here we use the name 'java8' which should be a logical alias to the Java8 location on your
+# machine, or else it could just be an alias for 'java' if your default Java is Java8.
+# This can be achieved with bash 'alias' plus the command 'shopt -s expand_aliases', or else a function:
+#
+#     function java8 () {
+#    	command /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java "$@";
+#	  };
+#	  export -f java8
+#
+
 if [ -z "$MAGICDRAW_HOME" ]; then
     echo "MAGICDRAW_HOME environment variable not set, please set it to the MagicDraw installation folder"
     exit 1
@@ -31,7 +43,7 @@ CP="${OSGI_LAUNCHER}${cp_delim}${OSGI_FRAMEWORK}${cp_delim}${MD_OSGI_FRAGMENT}${
 `  `$MAGICDRAW_HOME/lib/md.jar${cp_delim}$MAGICDRAW_HOME/lib/md_common.jar${cp_delim}\
 `  `$MAGICDRAW_HOME/lib/jna.jar"
 
-java -Xmx1200M -Xss1024K \
+java8 -Xmx1200M -Xss1024K \
        -Dmd.class.path=$md_cp_url \
        -Dcom.nomagic.osgi.config.dir="$MAGICDRAW_HOME/configuration" \
        -Desi.system.config="$MAGICDRAW_HOME/data/application.conf" \
