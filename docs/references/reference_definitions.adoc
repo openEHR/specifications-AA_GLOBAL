@@ -193,8 +193,8 @@
 :openehr_term_latest_terminology: {openehr_term_latest}/SupportTerminology.html
 
 // Git links
-:openehr_terminology_resources: {openehr_git}/terminology
-:openehr_terminology_xml: {openehr_terminology_resources}/blob/master/openEHR_RM/en/openehr_terminology.xml
+:openehr_terminology_resources: {openehr_git}/specifications-TERM
+:openehr_terminology_xml: {openehr_terminology_resources}/blob/master/computable/XML/en/openehr_terminology.xml
 
 // --------------- ITS ----------------
 :openehr_its_releases: {openehr_specs}/releases/ITS/{its_release}
