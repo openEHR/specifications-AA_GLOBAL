@@ -270,9 +270,10 @@
 :gdl_wiki: {gdl_github}/common-clinical-models/wiki
 
 // IANA
-:iana: http://www.iana.org
+:iana: https://www.iana.org
 :iana_character_sets: {iana}/assignments/character-sets
-:iana_media_types: {iana}/assignments/media-types/text
+:iana_media_types: {iana}/assignments/media-types
+:iana_language_subtag_registry: {iana}/assignments/language-subtag-registry
 
 //
 // =============== major online reference sites ===============
@@ -407,6 +408,7 @@
 :iso: https://www.iso.org
 :iso_8601_official: {iso}/iso-8601-date-and-time-format.html
 :iso_639_1_codes: {wikipedia}/List_of_ISO_639-1_codes
+:iso_3166_1_codes_alpha_2_codes: {wikipedia}/ISO_3166-1_alpha-2#Current_codes
 :iso_8601: {wikipedia}/ISO_8601
 :iso_rm_odp: {wikipedia}/RM-ODP
 :iso_2788: {iso}/standard/7776.html
