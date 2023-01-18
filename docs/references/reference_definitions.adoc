@@ -286,9 +286,10 @@
 //
 // =============== e-Health online resources ===============
 //
-:bfo: http://ifomis.uni-saarland.de/bfo/
+:bfo: https://basic-formal-ontology.org
+:ro: https://obofoundry.org/ontology/ro.html
 :fma: http://sig.biostr.washington.edu/projects/fm/
-:iao:  https://code.google.com/p/information-artifact-ontology/
+:iao:  https://bioportal.bioontology.org/ontologies/IAO
 :snomed: http://www.snomed.org
 :ihtsdo: {snomed}
 :snomed_ct: {snomed}
