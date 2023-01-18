@@ -82,6 +82,11 @@ run_asciidoctor () {
 		opts="${opts} -v"
 	fi
 
+	# -q package_qualifiers
+	if [ "$package_qualifiers" = true ]; then
+		opts="${opts} -a package_qualifiers"
+	fi
+
 	# -t trace
 	if [ "$trace" = true ]; then
 		opts="${opts} --trace"
@@ -128,6 +133,11 @@ run_asciidoctor_pdf () {
 	# -v verbose
 	if [ "$verbose_mode" = true ]; then
 		opts="${opts} -v"
+	fi
+
+	# -q package_qualifiers
+	if [ "$package_qualifiers" = true ]; then
+		opts="${opts} -a package_qualifiers"
 	fi
 
 	# -t trace
@@ -184,7 +194,7 @@ ad_varargs=""
 # include package names, i.e. be of the form pkg.pkg.class.ext
 # rather than just class.ext. Useful to avoid clashes of same
 # named classes from different packages.
-# qualified_class_file_names=
+# package_qualifiers=
 
 #
 # ================== main =================
@@ -209,7 +219,7 @@ while getopts "nfuhpqrtwvm:l:" o; do
             gen_pdf=true
             ;;
         q)
-            qualified_class_file_names=true
+            package_qualifiers=true
             ;;
         t)
             trace=true
@@ -334,7 +344,7 @@ for component_dir in ${component_list[@]}; do
 
 		# if UML source newer than UML docs or no UML docs, regenerate
 		uml_file="computable/UML/openEHR_UML-$component.mdzip"
-		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i "{%s_release}" -r $uml_root_package ${qualified_class_file_names:+-q} -c $component -o docs/UML $uml_file" 
+		uml_regen_cmd="$ref_dir/bin/uml_generate.sh -d svg -i "{%s_release}" -r $uml_root_package ${package_qualifiers:+-q} -c $component -o docs/UML $uml_file" 
 		if [[ "$uml_force_generate" = true || \
 			  "$uml_docs_empty" = true || \
 			  $(echo "$ts_uml > $ts_uml_docs" | bc -l) -eq 1 && -f $uml_file \
