@@ -48,7 +48,15 @@ To find out what else you can do, type:
 $ ./do_spec_publish -h
 ----
 
+== Making changes.
+
+=== Text
+Some of the typos (or other text improvements) are actually in the UML text, which is inside the tool. Other improvements are to text that is in the .adoc source files. However, the UML class definitions are also extracted to .adoc files, so it looks like everything is just .adoc files that could easily be updated. But if we apply a typo fix to one of the extracted adoc files (in /docs/UML/classes) it will be overwritten the next time the MD is used, and a new extraction is run. So some of the typos have to be done inside MD, while others can be done directly on adoc files not in that directroy
+
 Whenever you want to publish changes made over time at some later date, re-run `./setup_openehr_git.sh`, which will now perform `git pull` commands on the relevant repositories, and then run `./do_spec_publish`.
+
+=== UML
+Ask the SEC how to do this using MAGICDRAW
 
 == How to do a Release of a Component
 
