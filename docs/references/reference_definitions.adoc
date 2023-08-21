@@ -216,6 +216,7 @@
 :openehr_demographic_rest_api: {openehr_its_rest_releases}/demographic.html
 
 :openehr_simplified_data_template: {openehr_its_rest_releases}/simplified_data_template.html
+:openehr_smart_app_launch: {openehr_its_rest_releases}/smart_app_launch.html
 
 // XML schemas
 :openehr_its_am_xsd: {openehr_its_xml_releases}/components/AM
