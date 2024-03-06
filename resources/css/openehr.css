@@ -776,7 +776,7 @@ code { font-size: 0.875em; }
   .hide-for-print { display: none !important; }
   .show-for-print { display: inherit !important; } }
 
-#smart_logo {
-  margin-top: 40px;
-  margin-bottom: 40px;
+#smart_logo > div.content {
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
