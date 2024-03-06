@@ -775,3 +775,8 @@ code { font-size: 0.875em; }
   .print-only { display: block !important; }
   .hide-for-print { display: none !important; }
   .show-for-print { display: inherit !important; } }
+
+#smart_logo {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
