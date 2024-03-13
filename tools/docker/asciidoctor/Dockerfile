@@ -1,13 +1,12 @@
-FROM ubuntu:18.04
+FROM asciidoctor/docker-asciidoctor
 
-RUN apt-get update \
-    && apt-get install -y wget curl git \
-    && apt-get clean
+# we also need (wget, curl, git, bc) but they are available in asciidoctor default image
 
-RUN apt-get install -y python3 ruby jq bc \
-    && apt-get clean
+RUN apk update \
+ && apk add jq \
+ && rm -rf /var/cache/apk/*
 
-RUN gem install asciidoctor asciidoctor-bibtex pygments.rb
+RUN gem install pygments.rb
 
 VOLUME /root/openEHR-specifications
 WORKDIR /root/openEHR-specifications
