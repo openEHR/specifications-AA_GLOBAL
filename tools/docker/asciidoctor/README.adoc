@@ -4,7 +4,7 @@ Building image, from current directory:
 docker build -t openehr-asciidoctor .
 ----
 
-Instantiating container:
+Instantiating container, mounting the parent directory of all the specifications:
 [source]
 ----
 cd ..
@@ -14,6 +14,6 @@ docker run -it -v "$(pwd):/root/openEHR-specifications" openehr-asciidoctor bash
 Running asciidoctor inside the container:
 [source]
 ----
-./do_spec_publish.sh -f -r -v -t -q -l Release-1.0.1 QUERY
-./do_spec_publish.sh -f -r -v -t -q -l latest RM
+./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l Release-1.0.1 QUERY
+./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l latest RM
 ----
