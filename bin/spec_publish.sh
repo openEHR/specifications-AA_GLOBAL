@@ -56,8 +56,6 @@ run_asciidoctor () {
 	out_file=${2}${1}.html
 
 	# work out the options
-	# add following line back in when working
-	#	-r asciidoctor-bibtex \
 	opts="$4 \
 		-a current_year=$year \
 		-a grammar_dir=$grammar_dir \
@@ -72,7 +70,7 @@ run_asciidoctor () {
 		-a doc_name=${1} \
 		-a allow-uri-read \
 		-r asciidoctor-tabs -a tabs-stylesheet=asciidoctor-tabs.css \
-		-a bibtex-file=$ref_dir/docs/references/references.bib"
+		-r asciidoctor-bibtex -a bibtex-file=$ref_dir/docs/references/references.bib"
 
 	# -w missing attribute warnings
 	if [ "$warn_missing_attrs" = true ]; then
@@ -94,7 +92,7 @@ run_asciidoctor () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} -r asciidoctor-bibtex --out-file=$out_file $3
+	asciidoctor ${opts} --out-file=$out_file $3
 		
 	echo generated $(pwd)/$out_file
 }
@@ -109,8 +107,6 @@ run_asciidoctor_pdf () {
 	out_file=${2}${1}.html
 
 	# work out the options
-	# add following line back in when working
-	#	-r asciidoctor-bibtex \
 	opts="$4 \
 		-a attribute-missing=warn \
 		-a current_year=$year \
@@ -125,7 +121,7 @@ run_asciidoctor_pdf () {
 		-a allow-uri-read \
 		-a pdf-style=$pdf_theme \
 		-a pdf-stylesdir=$ref_dir/resources \
-		-a bibtex-file=$ref_dir/docs/references/references.bib"
+		-r asciidoctor-bibtex -a bibtex-file=$ref_dir/docs/references/references.bib"
 
 	# -w missing attribute warnings
 	if [ "$warn_missing_attrs" = true ]; then
@@ -147,7 +143,7 @@ run_asciidoctor_pdf () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} -r asciidoctor-pdf -b pdf -r asciidoctor-bibtex --out-file=$out_file $3
+	asciidoctor ${opts} -r asciidoctor-pdf -b pdf --out-file=$out_file $3
 	echo generated $(pwd)/$out_file
 }
 
