@@ -67,9 +67,11 @@ run_asciidoctor () {
 		-a base_dir=$base_dir \
 		-a stylesdir=$stylesdir \
 		-a stylesheet=$stylesheet \
+		-a scriptsdir=$scriptsdir \
 		-a release=$release \
 		-a doc_name=${1} \
 		-a allow-uri-read \
+		-r asciidoctor-tabs -a tabs-stylesheet=asciidoctor-tabs.css \
 		-a bibtex-file=$ref_dir/docs/references/references.bib"
 
 	# -w missing attribute warnings
@@ -180,6 +182,7 @@ uml_root_package="openehr"
 
 specs_root_uri=https://specifications.openehr.org
 specs_css_uri=$specs_root_uri/styles
+specs_js_uri=$specs_root_uri/js
 
 # ------------- static vars --------------
 # release id
@@ -313,8 +316,10 @@ fi
 if [[ "$use_remote_resources" = true ]]; then
 	echo "using remote CSS location"
 	stylesdir=$specs_css_uri
+	scriptsdir=$specs_js_uri
 else
 	stylesdir=${local_ref_uri}/resources/css
+	scriptsdir=${local_ref_uri}/resources/js
 fi
 echo "setting stylesdir to $stylesdir"
 
