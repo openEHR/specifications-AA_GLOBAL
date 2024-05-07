@@ -11,3 +11,5 @@
 // HTML specific
 :linkcss:
 :sectanchors:
+// asciidoctor-tabs specific
+:tabs-sync-option:
