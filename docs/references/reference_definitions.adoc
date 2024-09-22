@@ -76,6 +76,8 @@
 :openehr_cds_latest: {openehr_specs}/releases/CDS/latest
 :openehr_cds_latest_gdl: {openehr_cds_latest}/GDL.html
 :openehr_cds_latest_gdl2: {openehr_cds_latest}/GDL2.html
+:openehr_cds_development: {openehr_specs}/releases/CDS/development
+:openehr_cds_development_gdl2: {openehr_cds_development}/GDL2.html
 
 // --------------- LANG ----------------
 :openehr_lang_releases: {openehr_specs}/releases/LANG/{lang_release}
@@ -106,6 +108,10 @@
 // for link in preface part of docs
 :openehr_sm_latest: {openehr_specs}/releases/SM/latest
 :openehr_sm_latest_openehr_platform: {openehr_sm_latest}/openehr_platform.html
+:openehr_sm_development: {openehr_specs}/releases/SM/development
+:openehr_sm_development_openehr_platform: {openehr_sm_development}/openehr_platform.html
+:openehr_sm_development_simplified_im_b: {openehr_sm_releases}/simplified_im_b.html
+:openehr_sm_development_serial_data_formats: {openehr_sm_releases}/serial_data_formats.html
 
 // --------------- QUERY ----------------
 :openehr_query_releases: {openehr_specs}/releases/QUERY/{query_release}
@@ -184,6 +190,11 @@
 :openehr_cnf_latest_platform_test_schedule: {openehr_cnf_latest}/platform_test_schedule.html
 :openehr_cnf_latest_certificate: {openehr_cnf_latest}/certificate.html
 :openehr_cnf_latest_profiles: {openehr_cnf_latest}/profiles.html
+:openehr_cnf_development: {openehr_specs}/releases/CNF/development
+:openehr_cnf_development_guide: {openehr_cnf_development}/guide.html
+:openehr_cnf_development_platform_test_schedule: {openehr_cnf_development}/platform_test_schedule.html
+:openehr_cnf_development_certificate: {openehr_cnf_development}/certificate.html
+:openehr_cnf_development_profiles: {openehr_cnf_development}/profiles.html
 
 // --------------- TERM ----------------
 :openehr_term_releases: {openehr_specs}/releases/TERM/{term_release}
@@ -194,6 +205,8 @@
 // for link in preface part of docs
 :openehr_term_latest: {openehr_specs}/releases/TERM/latest
 :openehr_term_latest_terminology: {openehr_term_latest}/SupportTerminology.html
+:openehr_term_development: {openehr_specs}/releases/TERM/development
+:openehr_term_development_terminology: {openehr_term_development}/SupportTerminology.html
 
 // Git links
 :openehr_terminology_resources: {openehr_git}/specifications-TERM
