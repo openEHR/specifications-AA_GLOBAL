@@ -61,6 +61,11 @@
 :openehr_base_latest_foundation_types: {openehr_base_latest}/foundation_types.html
 :openehr_base_latest_resource: {openehr_base_latest}/resource.html
 :openehr_base_latest_overview: {openehr_base_latest}/architecture_overview.html
+:openehr_base_development: {openehr_specs}/releases/BASE/development
+:openehr_base_development_architecture_overview: {openehr_base_development}/architecture_overview.html
+:openehr_base_development_base_types: {openehr_base_development}/base_types.html
+:openehr_base_development_foundation_types: {openehr_base_development}/foundation_types.html
+:openehr_base_development_resource: {openehr_base_development}/resource.html
 
 // For legacy referencing from AM Release-2.1.0, AM Release-2.2.1
 :openehr_base_release_104: {openehr_specs}/releases/BASE/Release-1.0.4
