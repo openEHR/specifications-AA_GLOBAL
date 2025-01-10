@@ -63,6 +63,7 @@
 
 :openehr_base_uml_diagrams: {openehr_base_releases}/UML/diagrams
 :openehr_base_release_102: {openehr_specs}/releases/BASE/Release-1.0.2
+:openehr_base_release_130: {openehr_specs}/releases/BASE/Release-1.3.0
 
 // for link in preface part of docs
 :openehr_base_latest: {openehr_specs}/releases/BASE/latest
