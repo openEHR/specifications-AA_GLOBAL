@@ -40,6 +40,15 @@
 :openehr_am_latest_aom2: {openehr_am_latest}/AOM2.html
 :openehr_am_latest_opt2: {openehr_am_latest}/OPT2.html
 :openehr_am_latest_id: {openehr_am_latest}/Identification.html
+//
+:openehr_am_development: {openehr_specs}/releases/AM/development
+:openehr_am_development_overview: {openehr_am_development}/Overview.html
+:openehr_am_development_adl14: {openehr_am_development}/ADL1.4.html
+:openehr_am_development_aom14: {openehr_am_development}/AOM1.4.html
+:openehr_am_development_adl2: {openehr_am_development}/ADL2.html
+:openehr_am_development_aom2: {openehr_am_development}/AOM2.html
+:openehr_am_development_opt2: {openehr_am_development}/OPT2.html
+:openehr_am_development_id: {openehr_am_development}/Identification.html
 
 // --------------- BASE ----------------
 :openehr_base_releases: {openehr_specs}/releases/BASE/{base_release}
