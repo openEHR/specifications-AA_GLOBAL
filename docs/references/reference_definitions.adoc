@@ -243,7 +243,9 @@
 :openehr_definitions_rest_api: {openehr_its_rest_releases}/definitions.html
 :openehr_demographic_rest_api: {openehr_its_rest_releases}/demographic.html
 
-:openehr_simplified_data_template: {openehr_its_rest_releases}/simplified_data_template.html
+// legacy openehr_simplified_data_template => openehr_simplified_formats
+:openehr_simplified_formats: {openehr_its_rest_releases}/simplified_formats.html
+:openehr_simplified_data_template: {openehr_its_rest_releases}
 :openehr_smart_app_launch: {openehr_its_rest_releases}/smart_app_launch.html
 
 // XML schemas
