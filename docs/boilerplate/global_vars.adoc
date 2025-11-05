@@ -98,8 +98,8 @@
 :intg_release: latest
 :query_release: latest
 :proc_release: latest
-:its_release: latest
-:its_rest_release: latest
-:its_json_release: latest
-:its_bmm_release: latest
-:its_xml_release: latest
+:its_release: development
+:its_rest_release: development
+:its_json_release: development
+:its_bmm_release: development
+:its_xml_release: development
