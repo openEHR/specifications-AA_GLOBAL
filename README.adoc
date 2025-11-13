@@ -28,11 +28,11 @@ Running asciidoctor inside the container:
 ./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l development RM
 ----
 
-Running asciidoctor as a tool:
+Running asciidoctor as a tool (considering that the docker CMD is defined `spec_publish.sh -f -r -v -t -q -l`):
 [source]
 ----
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor -f -r -v -t -q -l Release-1.0.1 QUERY
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor -f -r -v -t -q -l development RM
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor Release-1.0.1 QUERY
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor development RM
 ----
 
 === Manual Tool installation

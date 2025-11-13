@@ -12,5 +12,5 @@ RUN apk update \
     && rm -rf /var/cache/apk/*
 
 COPY bin/*.sh /usr/local/bin/
-ENTRYPOINT ["/usr/local/bin/spec_publish.sh"]
+ENTRYPOINT ["/usr/local/bin/spec_publish.sh", "-f", "-r", "-v", "-t", "-q", "-l"]
 
