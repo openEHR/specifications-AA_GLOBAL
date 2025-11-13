@@ -4,22 +4,47 @@ Global definitions, documents and scripts for openEHR
 
 == How to set up the Asciidoctor publishing environment for the specifications
 
+=== Tool via Docker
+
+Asciidoctor can be used as a tool via Docker with building provided Dockerfile.
+
+Building image:
+[source]
+----
+docker build -t asciidoctor .
+----
+
+Instantiating container, mounting the parent directory (assuming that is containing all openEHR specifications repos):
+[source]
+----
+cd ..
+docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" asciidoctor bash
+----
+
+Running asciidoctor inside the container:
+[source]
+----
+./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l Release-1.0.1 QUERY
+./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l development RM
+----
+
+Running asciidoctor as a tool:
+[source]
+----
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" asciidoctor -f -r -v -t -q -l Release-1.0.1 QUERY
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" asciidoctor -f -r -v -t -q -l development RM
+----
+
+=== Manual Tool installation
+
 NOTE: a Linux-like environment is assumed; cygwin under Windows will work fine.
-
-NOTE: in the below, if you are an openEHR SEC member, you may be doing direct clone + modify master or other branch; if you are not, you will most likely be cloning forked copies and doing pull requests in the usual way. From the point of view of publishing with Asciidoctor, there is no difference.
-
-=== Tool installation
 
 Firstly, you need to install asciidoctor. This is generally painless - https://asciidoctor.org[see here^].
 Install also few other required things:
 
- - gems: asciidoctor-bibtex and pygments.rb
+ - gems: asciidoctor-diagram, asciidoctor-diagram-plantuml, asccidoctor-bibtext, asciidoctor-tabs and pygments.rb
  - python
  - jq (and bc)
-
-NOTE: Instead of installing this from scratch it you can also build and use the provided /tools/docker/asciidoctor/Dockerfile of this repo; see also attached README file for more instructions.
-
-NOTE: We currently use version v2.0.10 of asciidoctor.
 
 Secondly you may need MagicDraw, since UML diagrams and definitions are extracted from the UML binary files via MagicDraw. Please contact the openEHR SEC if this is the case.
 
