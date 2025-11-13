@@ -14,11 +14,11 @@ Building image:
 docker build -t openehr/asciidoctor .
 ----
 
-Instantiating container, mounting the parent directory (assuming that is containing all openEHR specifications repos):
+Instantiating container, mounting the parent directory (assuming that contains all openEHR specifications repos):
 [source]
 ----
 cd ..
-docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor bash
+docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" --entrypoint bash openehr/asciidoctor
 ----
 
 Running asciidoctor inside the container:
