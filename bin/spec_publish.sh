@@ -69,6 +69,7 @@ run_asciidoctor () {
 		-a release=$release \
 		-a doc_name=${1} \
 		-a allow-uri-read \
+		-r asciidoctor-diagram \
 		-r asciidoctor-tabs -a tabs-stylesheet=asciidoctor-tabs.css \
 		-r asciidoctor-bibtex -a bibtex-file=$ref_dir/docs/references/references.bib"
 
