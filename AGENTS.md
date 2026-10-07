@@ -17,6 +17,7 @@ bin/
   old_docs_fixer.sh         # one-off sed migration for old docs; run from inside a component repo
 docs/
   index.adoc                # global class index; docs/index.html is its committed build output
+  how-to.md                 # human how-to guide: clone, publish, change text, release (README.adoc links it)
   boilerplate/              # shared includes: global_vars, *_style_settings, full/short_front_block, licence_block, doc_id_block
   references/               # reference_definitions.adoc (~350 URL/link attributes) and references.bib (asciidoctor-bibtex)
   diagrams/, images/, governance/diagrams/   # shared figures
@@ -67,9 +68,9 @@ The published image `ghcr.io/openehr/asciidoctor` is built by `.github/workflows
 - **`global_vars.adoc`**: defines every shared attribute for all documents. Component release attributes (`:base_release:`, `:rm_release:`, `:am_release:`, ...) are `latest`; all `:its_*_release:` are `development`. Be precise with names and values.
 - **`reference_definitions.adoc`**: follow the existing naming (e.g. `:openehr_rm_latest_*:` for RM latest links), grouped by component and external standard.
 - **Boilerplate includes** (`{ref_dir}/docs/boilerplate/...`; `{ref_dir}` is this repo as seen from the consuming repo): test a change against more than one component.
-- **`spec_publish.sh`, `Dockerfile`**: affect every component build; keep the Dockerfile ENTRYPOINT flags and the README examples in sync.
+- **`spec_publish.sh`, `Dockerfile`**: affect every component build; keep the Dockerfile ENTRYPOINT flags and the examples in `README.adoc` and `docs/how-to.md` in sync.
 - **`manifest_template.json`**: actual manifests live in each component repo. Valid `spec_status`: `DEVELOPMENT | PAUSED | TRIAL | STABLE | SUPERSEDED | OBSOLETE | ARCHIVED`.
-- Releases are named `Release-N.N.N`; fix releases `Release-N.N.NvN` (e.g. `Release-1.0.4v1`). The full release procedure is in `README.adoc`.
+- Releases are named `Release-N.N.N`; fix releases `Release-N.N.NvN` (e.g. `Release-1.0.4v1`). The full release procedure is in `docs/how-to.md`.
 
 ## Conventions
 

@@ -1,136 +1,49 @@
 = specifications-AA_GLOBAL
 
-Global definitions, documents and scripts for openEHR
+Shared infrastructure for building the https://specifications.openehr.org[openEHR specifications^]: global AsciiDoc attributes and boilerplate, reference and bibliography definitions, stylesheets and PDF themes, the publishing scripts, and the Docker image that runs them.
 
-== How to set up the Asciidoctor publishing environment for the specifications
+This repository is not a specification. Each `specifications-XX` component repository (RM, AM, BASE, LANG and so on) includes its files, so a change here affects every specification build.
 
-=== Tool via Docker
+== What is here
 
-Asciidoctor can be used as a tool via Docker, either with the published image or by building the provided Dockerfile.
+[cols="1,3"]
+|===
+|Path |Contents
 
-Getting the published image (built and pushed by the manually triggered GitHub Action `docker-publish.yml`):
-[source]
-----
-docker pull ghcr.io/openehr/asciidoctor:latest
-----
+|`bin/`
+|Publishing and setup scripts. `spec_publish.sh` renders a component's documents with Asciidoctor.
 
-Or building the image locally:
-[source]
-----
-docker build -t openehr/asciidoctor .
-----
+|`docs/boilerplate/`
+|Shared AsciiDoc includes: global attributes, style settings, front blocks and the licence block.
 
-NOTE: the examples below use the published image; if you built it locally, use `openehr/asciidoctor` instead of `ghcr.io/openehr/asciidoctor`.
+|`docs/references/`
+|Link attribute definitions (`reference_definitions.adoc`) and the bibliography (`references.bib`).
 
-Instantiating container, mounting the parent directory (assuming that contains all openEHR specifications repos):
-[source]
-----
-cd ..
-docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" --entrypoint bash ghcr.io/openehr/asciidoctor
-----
+|`resources/`
+|Stylesheets, JavaScript, PDF themes, logos and licence badges.
 
-Running asciidoctor inside the container:
-[source]
-----
-./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l Release-1.0.1 QUERY
-./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l development RM
-----
+|`manifest_template.json`
+|Template for each component's `manifest.json`.
 
-Running asciidoctor as a tool (considering that the docker ENTRYPOINT is defined `spec_publish.sh -f -r -v -t -q -l`):
-[source]
+|`Dockerfile`
+|The publishing image. `.github/workflows/docker-publish.yml` builds it and pushes it to `ghcr.io/openehr/asciidoctor` when triggered manually.
+|===
+
+== Quick start
+
+Render the HTML of one component, here RM, from the directory that holds all your `specifications-XX` clones:
+
+[source,bash]
 ----
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asciidoctor Release-1.0.1 QUERY
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asciidoctor development RM
+docker run --rm -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asciidoctor development RM
 ----
 
-=== Manual Tool installation
+The output goes to `specifications-RM/docs`.
 
-NOTE: a Linux-like environment is assumed; cygwin under Windows will work fine.
+== Documentation
 
-Firstly, you need to install asciidoctor. This is generally painless - https://asciidoctor.org[see here^].
-Install also few other required things:
+* link:docs/how-to.md[How to publish and release specifications]: clone the repositories, render documents with or without Docker, change specification text, release a component and fix a release.
 
- - gems: asciidoctor-diagram, asciidoctor-diagram-plantuml, asccidoctor-bibtext, asciidoctor-tabs and pygments.rb
- - python
- - jq (and bc)
+== Licence
 
-Secondly you may need MagicDraw, since UML diagrams and definitions are extracted from the UML binary files via MagicDraw. Please contact the openEHR SEC if this is the case.
-
-Installing MagicDraw is relatively painless on Linux, despite not being PPA-managed. https://docs.nomagic.com/display/NMDOC/Installing+modeling+tools#Installingmodelingtools-InstallingonUnix[instructions^]).
-
-If you installed MagicDraw, you will also need to install the openEHR https://github.com/openEHR/UML-adoc-exporter.git[UML extractor plugin^].
-
-=== Git repo setup
-
-Now you need to clone the openEHR specifications repos, as follows:
-
-1. Create a directory `openEHR-specifications` or similar to contain the specifications git repo clones
-2. Download https://github.com/openEHR/specifications-AA_GLOBAL/blob/master/bin/setup_openehr_git.sh[the bash script /bin/setup_openehr_git.sh^] into that directory and run it (needs to be Linux, cygwin, or other unix-like environment).
-
-You are now ready to go. From the parent directory, in a bash shell, type:
-
-----
-$ ./do_spec_publish -r RM
-----
-
-This will publish the HTML documents for the RM component in `specifications-RM/docs`. You can do the same for any other component, e.g. BASE, QUERY etc.
-
-To find out what else you can do, type:
-
-----
-$ ./do_spec_publish -h
-----
-
-== Making changes.
-
-=== Text
-Some of the typos (or other text improvements) are actually in the UML text, which is inside the tool. Other improvements are to text that is in the .adoc source files. However, the UML class definitions are also extracted to .adoc files, so it looks like everything is just .adoc files that could easily be updated. But if we apply a typo fix to one of the extracted adoc files (in /docs/UML/classes) it will be overwritten the next time the MD is used, and a new extraction is run. So some of the typos have to be done inside MD, while others can be done directly on adoc files not in that directroy
-
-Whenever you want to publish changes made over time at some later date, re-run `./setup_openehr_git.sh`, which will now perform `git pull` commands on the relevant repositories, and then run `./do_spec_publish`.
-
-=== UML
-Ask the SEC how to do this using MAGICDRAW
-
-== How to do a Release of a Component
-
-Components, i.e. RM, AM, LANG, PROC etc are the units of release. Each component has its own Github repo. A release is _always named_ either:
-
-* `Release-N.N.N`, where `N.N.N` is a semver-style 3-part release id, e.g. `1.2.14`, OR
-* `Release-N.N.NvN`, where the trailing `vN` identifies a new version of the existing release `Release-N.N.N` (see below)
-
-To do a release of a component, e.g. 'RM Release-1.0,4', the following steps are required.
-
-=== Jira
-
-When all the work specified by the CRs in the component project (e.g. SPECRM) in Jira is done, resolve and close all Jira CRs and PRs. You can now create the relevant saved searches for the PRs and the CRs for this release in Jira, which will have URLs of the form `<jira-home>/projects/SPECPR/versions/NNNNN` and `<jira-home>/projects/SPECR/versions/NNNNN` respectively. 
-
-=== Git work area
-
-In the Git clone work area of the relevant component (e.g. `specifications-RM`):
-
-* make sure you have done every last change to the specifications files;
-* In the `manifest.json` file, ensure:
-** the `specifications[@id=<spec>]/spec_status` value is correct for each `<spec>` in the component (e.g. this release may be the one that promotes a specification from `TRIAL` to `STABLE`) (https://github.com/openEHR/specifications-RM/blob/master/manifest.json#L24[example^]);
-** there is a correct entry under `releases` for this release - in particular, check the Jira links are correct. It should receive a date (i.e. the current date), and (when necessary) a new `cooking` release should be prepended by leaving the date empty.
-* create a new branch with the name of the release, e.g. `Release-1.0.4` and check it out. The changes from now will be on that branch, which becomes that releas's maintenance branch.
-* now run the publisher script in release mode, e.g. `./do_spec_publish -r -l Release-1.0.4` (as many times as needed) and check:
-** the HTML output front page and preface page of each specification document;
-* commit all the changes locally;
-* add an _annotated_ Git tag with the release id e.g. `Release-1.0.4`, and a short description, usually of the form `"RM Release 1.0.4"`, but may have more text if needed;
-* push the changes to Github.
-* don't forget you are on a branch, for later work, you probably want to go back to `master`.
-
-The last push will cause a normal commit at GitHub, and the webhook will cause the `specifications.openEHR.org` server to do a `pull`, and then a copy out of a) the latest commit, and b) also of any tagged commit not already copied out, to two different directories under the `/var/www/vhosts/openehr.org/specifications.openehr.org/releases/COMPONENT` area, namely `Release-N.N.N` and `latest`. If you just did a release, these are the same, but otherwise, usually just the `latest` is updated. These copy-outs are what enables the `specifications.openehr.org` to serve both the latest working version and also all previous releases of any spec.
-
-== Fixing a Release
-
-Sometimes all the above work is performed, and then someone discovers a significant typo or other error in the newly released specifications (including diagrams etc). Fixing things is easy. Do the following in the Git work area:
-
-* check out the relevant release branch (see above); any changes you now make are on that branch.
-* make the changes you need to the source files;
-* republish using `./do_spec_publish` with the original release id, e.g. `./do_spec_publish -r -l Release-1.0.4`;
-* commit the changes;
-* add a new annotated tag with the id `Release-N.N.NvN+1`, e.g. `Release-1.0.4v1`; the final number must be 1 higher than the previous fix release, so it could easily be `Release-1.0.4v7` if a number of errors were discovered over time;
-* push the new commit(s); the webhook-driven server scripts will over-write the last copy-out of the release with this new one;
-* don't forget to merge the changes across into the component's Git repo `master` branch as well, if they are not already taken care of by changes there.
-
+See link:LICENSE[LICENSE] (Creative Commons Attribution-ShareAlike 3.0 Unported).
