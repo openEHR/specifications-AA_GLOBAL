@@ -6,19 +6,27 @@ Global definitions, documents and scripts for openEHR
 
 === Tool via Docker
 
-Asciidoctor can be used as a tool via Docker with building provided Dockerfile.
+Asciidoctor can be used as a tool via Docker, either with the published image or by building the provided Dockerfile.
 
-Building image:
+Getting the published image (built and pushed by the manually triggered GitHub Action `docker-publish.yml`):
+[source]
+----
+docker pull ghcr.io/openehr/asciidoctor:latest
+----
+
+Or building the image locally:
 [source]
 ----
 docker build -t openehr/asciidoctor .
 ----
 
+NOTE: the examples below use the published image; if you built it locally, use `openehr/asciidoctor` instead of `ghcr.io/openehr/asciidoctor`.
+
 Instantiating container, mounting the parent directory (assuming that contains all openEHR specifications repos):
 [source]
 ----
 cd ..
-docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" --entrypoint bash openehr/asciidoctor
+docker run --rm -it -u $(id -u):$(id -g) -v "$(pwd):/documents/" --entrypoint bash ghcr.io/openehr/asciidoctor
 ----
 
 Running asciidoctor inside the container:
@@ -28,11 +36,11 @@ Running asciidoctor inside the container:
 ./specifications-AA_GLOBAL/bin/spec_publish.sh -f -r -v -t -q -l development RM
 ----
 
-Running asciidoctor as a tool (considering that the docker CMD is defined `spec_publish.sh -f -r -v -t -q -l`):
+Running asciidoctor as a tool (considering that the docker ENTRYPOINT is defined `spec_publish.sh -f -r -v -t -q -l`):
 [source]
 ----
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor Release-1.0.1 QUERY
-docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" openehr/asciidoctor development RM
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asciidoctor Release-1.0.1 QUERY
+docker run -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asciidoctor development RM
 ----
 
 === Manual Tool installation
