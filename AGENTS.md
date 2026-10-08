@@ -47,6 +47,8 @@ docker run --rm -it -u $(id -u):$(id -g) -v "$PWD:/documents/" --entrypoint bash
 docker build -t openehr/asciidoctor specifications-AA_GLOBAL
 ```
 
+Asciidoctor runs with `--failure-level=ERROR`: a document that logs an `ERROR` (a missing include, an unreadable include URI) is reported as `FAILED <file>`, and the build exits 1 after processing the rest. The HTML is still written. Images built before this change exited 0 whatever the log said.
+
 The published image `ghcr.io/openehr/asciidoctor` is built by `.github/workflows/docker-publish.yml`:
 
 - **Manual only** (`workflow_dispatch`); the workflow file must be on `master` before "Run workflow" appears in the Actions tab.

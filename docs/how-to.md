@@ -45,6 +45,8 @@ docker run --rm -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asc
 
 The HTML is written to the component's `docs` directory, for example `specifications-RM/docs`. A release build accepts exactly one component.
 
+The build exits with a non-zero status when Asciidoctor reports an error, such as an include file that cannot be found. The log names each affected document on a line starting with `FAILED`, after the error itself.
+
 To work inside the container, bypass the entrypoint and call the script yourself:
 
 ```bash

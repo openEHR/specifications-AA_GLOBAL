@@ -93,9 +93,12 @@ run_asciidoctor () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} --out-file=$out_file $3
-		
-	echo generated $(pwd)/$out_file
+	if asciidoctor ${opts} --failure-level=$failure_level --out-file=$out_file $3; then
+		echo generated $(pwd)/$out_file
+	else
+		echo "FAILED $(pwd)/$out_file (asciidoctor logged $failure_level or worse; see above)"
+		failures=$((failures + 1))
+	fi
 }
 
 # run Asciidoctor with PDF backend
@@ -144,8 +147,12 @@ run_asciidoctor_pdf () {
 		opts="${opts} --trace"
 	fi
 
-	asciidoctor ${opts} -r asciidoctor-pdf -b pdf --out-file=$out_file $3
-	echo generated $(pwd)/$out_file
+	if asciidoctor ${opts} --failure-level=$failure_level -r asciidoctor-pdf -b pdf --out-file=$out_file $3; then
+		echo generated $(pwd)/$out_file
+	else
+		echo "FAILED $(pwd)/$out_file (asciidoctor logged $failure_level or worse; see above)"
+		failures=$((failures + 1))
+	fi
 }
 
 # run a command in a standard way
@@ -172,6 +179,10 @@ uml_gen_dir=docs/UML/classes
 
 manifest_file=manifest.json
 manifest_vars_file=manifest_vars.adoc
+
+# Asciidoctor log level from which a document counts as failed (non-zero exit)
+failure_level=ERROR
+failures=0
 
 # Retired: MagicDraw UML extraction (computable/UML/*.mdzip -> docs/UML via uml_generate.sh).
 # Class tables and diagrams are now generated from each component's BMM by bmm-publisher.
@@ -421,7 +432,8 @@ for component_dir in ${component_list[@]}; do
 	# process docs dir
 	if [ -d docs ]; then
 		# do the main documents first
-		find docs -name $master_doc_name | while read docpath ; do
+		# (read from a process substitution, not a pipe, so that $failures survives the loop)
+		while read docpath ; do
 			docdir=$(dirname $docpath)
 			docname=$(basename $docdir)
 			olddir=$(pwd)
@@ -448,10 +460,10 @@ for component_dir in ${component_list[@]}; do
 			else
 				echo " ---------------"
 			fi
-		done
+		done < <(find docs -name $master_doc_name)
 
 		# look for index files
-		find docs -name $index_doc_name | while read docpath
+		while read docpath
 		do
 			docdir=$(dirname $docpath)
 			docname=index
@@ -462,7 +474,7 @@ for component_dir in ${component_list[@]}; do
 
 			run_asciidoctor ${docname} './' $index_doc_name "${ad_varargs}"
 			cd $olddir
-		done
+		done < <(find docs -name $index_doc_name)
 	fi
 
 	echo 
@@ -474,3 +486,9 @@ done
 # echo "*** remove junk http directories due to bug in Asciidoctor 1.5.2"
 # find . -type d -name 'http*' -exec rm -rf {} \;
 
+
+# exit non-zero when any document failed, so callers and CI can rely on the exit status
+if [ "$failures" -gt 0 ]; then
+	echo "$failures document(s) FAILED: asciidoctor logged $failure_level or worse" 1>&2
+	exit 1
+fi
