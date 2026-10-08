@@ -13,7 +13,7 @@ bin/
   spec_publish.sh           # main publisher: finds specifications-XX/docs/**/master.adoc, runs Asciidoctor
   do_spec_publish.sh        # one-line wrapper; users copy it to the parent dir
   setup_openehr_git.sh      # clones/pulls all openEHR specifications-* repos (+ adl-antlr)
-  uml_generate.sh           # legacy: MagicDraw UML -> docs/UML (needs MAGICDRAW_HOME + Java 8)
+  uml_generate.sh           # retired: MagicDraw UML -> docs/UML; spec_publish.sh no longer calls it
   old_docs_fixer.sh         # one-off sed migration for old docs; run from inside a component repo
 docs/
   index.adoc                # global class index; docs/index.html is its committed build output
@@ -47,6 +47,8 @@ docker run --rm -it -u $(id -u):$(id -g) -v "$PWD:/documents/" --entrypoint bash
 docker build -t openehr/asciidoctor specifications-AA_GLOBAL
 ```
 
+Asciidoctor runs with `--failure-level=ERROR`: a document that logs an `ERROR` (a missing include, an unreadable include URI) is reported as `FAILED <file>`, and the build exits 1 after processing the rest. The HTML is still written. Images built before this change exited 0 whatever the log said.
+
 The published image `ghcr.io/openehr/asciidoctor` is built by `.github/workflows/docker-publish.yml`:
 
 - **Manual only** (`workflow_dispatch`); the workflow file must be on `master` before "Run workflow" appears in the Actions tab.
@@ -60,7 +62,7 @@ The published image `ghcr.io/openehr/asciidoctor` is built by `.github/workflows
 - `-l <release>` is only valid with a single component and sets `<component lowercased>_release`; for a hyphenated component (`ITS-REST`) that is `its-rest_release`, not the `its_rest_release` defined in `global_vars.adoc` (from reading the script, untested).
 - To get the script's own help, bypass the entrypoint (`--entrypoint spec_publish.sh image -h`); `docker run image -h` passes `-h` as the release.
 - `manifest_vars.adoc` is generated into each `docs/<doc>/` from the component's `manifest.json` on every publish; never hand-edit it.
-- Class tables in `docs/UML/classes` are generated, never hand-edited. MagicDraw-based components get them from `uml_generate.sh` (not available in the Docker image); BMM-based components such as BASE use `bmm-publisher` instead.
+- Class tables and diagrams in `docs/UML` are generated from each component's BMM by `bmm-publisher`, never hand-edited. `spec_publish.sh` no longer runs the MagicDraw extraction (`uml_generate.sh`, which used to delete `docs/UML/classes` and `docs/UML/diagrams` first), and `-u` is ignored. A `computable/UML/*.mdzip` left in a component repo is no longer read.
 - The base image is unpinned (`:latest`), so rebuilding the image can change tool versions without any change in this repo.
 
 ## Editing

@@ -45,6 +45,8 @@ docker run --rm -u $(id -u):$(id -g) -v "$(pwd):/documents/" ghcr.io/openehr/asc
 
 The HTML is written to the component's `docs` directory, for example `specifications-RM/docs`. A release build accepts exactly one component.
 
+The build exits with a non-zero status when Asciidoctor reports an error, such as an include file that cannot be found. The log names each affected document on a line starting with `FAILED`, after the error itself.
+
 To work inside the container, bypass the entrypoint and call the script yourself:
 
 ```bash
@@ -62,7 +64,6 @@ Install these tools, then publish from the directory that holds the clones.
 - Asciidoctor ([installation](https://asciidoctor.org)).
 - The gems `asciidoctor-diagram`, `asciidoctor-diagram-plantuml`, `asciidoctor-bibtex`, `asciidoctor-tabs` and `pygments.rb`, plus `asciidoctor-pdf` if you want PDF output (`-p`).
 - Python, `jq` and `bc`.
-- MagicDraw and the openEHR [UML extractor plugin](https://github.com/openEHR/UML-adoc-exporter), only for components whose classes are still defined in a MagicDraw file (`computable/UML/openEHR_UML-XX.mdzip`). Ask the openEHR SEC for access to MagicDraw.
 
 ```bash
 ./do_spec_publish.sh -r RM
@@ -74,8 +75,7 @@ This publishes the RM documents into `specifications-RM/docs`. Replace `RM` with
 
 Edit the `.adoc` files directly, except for the class definitions in `docs/UML/classes`. Those files are generated, and the next generation run overwrites any edit made in them.
 
-- For a component defined in MagicDraw, fix the text in the UML model and extract again. Ask the SEC how to use MagicDraw.
-- For a component defined in BMM, such as BASE, edit the BMM file and regenerate the class files with [bmm-publisher](https://github.com/openEHR/bmm-publisher).
+- Edit the component's BMM file and regenerate the class files with [bmm-publisher](https://github.com/openEHR/bmm-publisher). The publishing script no longer extracts class files from MagicDraw UML models.
 
 ## Release a component
 
